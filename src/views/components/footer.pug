@@ -1,0 +1,11 @@
+mixin footer(version, options = {slogan: true})
+  -
+    var {slogan} = options;
+  footer.footer
+    +mobile-container.ta-center
+      img(src=slogan ? 'img/logo-with-slogan.svg' : 'img/logo-small-blue.svg').footer__logo
+      p.text-m.footer__version
+        |ver.
+        |
+        |
+        != version

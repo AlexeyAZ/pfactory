@@ -1,0 +1,61 @@
+.input {
+  $field-padding: 22px;
+  $icon-size: 15px;
+  background-color: $blue-superdark;
+  border: 2px solid $gray;
+  border-radius: 50px;
+  position: relative;
+  font-size: 10px;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+
+  &__field {
+    background-color: transparent;
+    background-position: right $field-padding center;
+    background-size: $icon-size;
+    background-repeat: no-repeat;
+    border: none;
+    color: $blue-light;
+    outline: none;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    padding: $field-padding ($field-padding + $icon-size + 5px) $field-padding $field-padding;
+    width: 100%;
+
+    
+
+    &::placeholder {
+      color: $blue-light;
+    }
+
+    &:focus {
+      
+      ~ .input__label {
+        transform: translateY(10px);
+        color: $blue-main;
+        font-size: 8px;
+        top: 0;
+      }
+    }
+
+    &:valid {
+
+      ~ .input__label {
+        transform: translateY(10px);
+        color: $blue-main;
+        font-size: 8px;
+        top: 0;
+      }
+    }
+  }
+
+  &__label {
+    transition: transform 0.2s ease, top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+    transform: translateY(-50%);
+    color: $blue-light;
+    position: absolute;
+    top: 50%;
+    left: $field-padding;
+  }
+}

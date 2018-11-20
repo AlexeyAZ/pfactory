@@ -1,0 +1,14 @@
+.metawallet-logo {
+  font-weight: 100;
+  font-size: 37px;
+  line-height: 43px;
+  text-align: center;
+
+  &_first {
+    color: $blue-light;
+  }
+
+  &_last {
+    color: white;
+  }
+}

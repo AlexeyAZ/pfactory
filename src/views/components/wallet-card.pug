@@ -1,0 +1,34 @@
+mixin wallet-card(options = {currencyIcon: 'img/icon-mhc.svg', icon: 'img/img-earth-fire.png', name: 'SuperWallet', hash: 'd7dc 881c ...  fd36 84bb 672d 1', sumCryptoInt: 62, sumCryptoFraction: 200939, sumCryptoCurrency: '#mhc', sumFiat: 256.12, fiatCurrency: 'USD'}, disable=false)
+  -
+    var {currencyIcon, icon, name, hash, sumCryptoInt, sumCryptoFraction, sumCryptoCurrency, sumFiat, fiatCurrency} = options;
+  .wallet-card(class=(disable ? 'wallet-card_disable' : ''))
+    .wallet-card__currency-icon
+      img(src=currencyIcon, alt='')
+    .wallet-card__head
+      .wallet-card__icon(style=`background-image: url(${icon})`)
+      .wallet-card__info
+        p.caption-m.wallet-card__info-name
+          != name
+        p.text-light-l.wallet-card__info-hash
+          != hash
+    .wallet-card__body
+      .wallet-card__crypto-sum
+        span.wallet-card__crypto-sum-int
+          != sumCryptoInt
+          |.
+        span.wallet-card__crypto-sum-fraction
+          != sumCryptoFraction
+        |
+        |
+        span.wallet-card__crypto-currency
+          != sumCryptoCurrency
+      p.text-l.wallet-card__fiat-sum
+        span
+          != sumFiat
+        |
+        |
+        span
+          != fiatCurrency
+    .wallet-card__footer
+      a(href='')
+        img(src='img/icon-arrow-with-dot.svg')

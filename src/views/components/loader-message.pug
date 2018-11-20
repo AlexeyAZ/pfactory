@@ -1,0 +1,16 @@
+include mobile-container.pug
+
+mixin loader-message(type='warning')
+  //- type = warning || attention;
+
+  .loader-message(class=`loader-message_${type}`)&attributes(attributes)
+    +mobile-container
+      .loader-message__content
+        if type === 'warning'
+          img(src='../img/icon-warning.svg', alt='').loader-message__icon
+          span.loader-message__text.tt-uppercase.
+            warning!
+        else if type === 'attention'
+          img(src='../img/icon-attention.svg', alt='').loader-message__icon
+          span.loader-message__text.tt-uppercase.
+            Useful Tips

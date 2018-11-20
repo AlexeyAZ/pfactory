@@ -1,0 +1,16 @@
+mixin loader-tip(content = {number: 1, title: 'Remember to keep the password yourself!', text: ['Wallet data and QR code are stored in a separate<br> folder that is used to import or restore wallets.', 'We never save your password anywhere.']})
+  -
+    var {number, title, text} = content;
+  .loader-tip.tt-uppercase
+    p.loader-tip__number.caption-xxl
+      |tip
+      |
+      |
+      != number
+      |:
+    p.loader-tip__title.caption-s
+      != title
+    each val in text
+      p.text-light-m
+        != val
+

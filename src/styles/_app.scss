@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  color: white;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  margin: 0;
+  position: relative;
+  line-height: 1.5;
+  min-width: $min-width;
+}
+
+.icon-icon_100 {
+  fill: black;
+}

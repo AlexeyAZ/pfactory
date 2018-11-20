@@ -1,0 +1,13 @@
+extends layouts/_default-layout.pug
+
+include ./components/icon
+
+
+block append vars
+  -
+    title = 'Pfactory';
+
+block content
+  include ./svg/svg.pug
+  +icon('icon_100')
+  img(src="/img/logo.svg")

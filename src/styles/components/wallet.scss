@@ -1,0 +1,84 @@
+.wallet {
+
+  &__title {
+    position: relative;
+    margin-bottom: 30px;
+  }
+
+  &__title-text {
+    margin-bottom: 0;
+    padding: 0 30px;
+  }
+
+  &__dots {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+
+  &__dots-item {
+    display: inline-block;
+    background-color: $blue-light;
+    border-radius: 50%;
+    height: 5px;
+    width: 5px;
+  }
+
+  &__head {
+    margin-bottom: 45px;
+  }
+
+  &__head-main {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 5px;
+  }
+
+  &__head-sum {
+    text-transform: uppercase;
+    margin-right: 10px;
+    line-height: 1.1;
+  }
+
+  &__head-sum-int {
+    font-size: 34px;
+    font-weight: 500;
+  }
+
+  &__head-sum-fraction {
+    font-size: 22px;
+  }
+
+  &__head-mhc {
+    color: $blue-light;
+    margin-right: 10px;
+  }
+
+  &__head-percent-change {
+    color: $green-main;
+  }
+
+  &__chart {
+    margin-left: -$side-padding - 2px;
+    margin-right: -$side-padding - 2px;
+  }
+
+  &__switch-block-wrap {
+    background-color: $blue-darkest;
+    padding: 30px 0 37px;
+  }
+}
+
+.highcharts-tooltip {
+  span {
+    background-color: #2F7BC2;
+    border-radius: 30px;
+    color: white;
+    font-size: 10px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    padding: 4px 10px;
+  }
+}

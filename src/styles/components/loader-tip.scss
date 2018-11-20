@@ -1,0 +1,12 @@
+.loader-tip {
+  padding-top: 45px;
+
+  &__number {
+    margin-bottom: 1.5em;
+  }
+
+  &__title {
+    color: $blue-light;
+    margin-bottom: 1em;
+  }
+}

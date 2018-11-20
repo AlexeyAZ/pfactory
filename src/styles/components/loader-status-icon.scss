@@ -1,0 +1,59 @@
+.loader-status-icon {
+  $size: 130px;
+  $circle-padding: 24px;
+  $border-width: 2px;
+  border: 1px solid transparent;
+  display: inline-block;
+  margin-bottom: 30px;
+
+  &__inner {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: $circle-padding;
+    position: relative;
+    height: $size;
+    width: $size;
+
+    &:before {
+      content: '';
+      border: $border-width solid $blue-light;
+      border-radius: 50%;
+      opacity: 0.3;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    &_ripple {
+      border: $border-width solid white;
+
+      &:before,
+      &:after {
+        content: '';
+        border: $border-width solid $blue-light;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      &:before {
+        transform: translate($circle-padding / -2 - $border-width, $circle-padding / -2 - $border-width);
+        opacity: 0.3;
+        height: calc(#{$size} + #{$circle-padding});
+        width: calc(#{$size} + #{$circle-padding});
+      }
+
+      &:after {
+        transform: translate(2 * $circle-padding / -2 - $border-width, 2 * $circle-padding / -2 - $border-width);
+        opacity: 0.1;
+        height: calc(#{$size} + 2 * #{$circle-padding});
+        width: calc(#{$size} + 2 * #{$circle-padding});
+      }
+    }
+  }
+}

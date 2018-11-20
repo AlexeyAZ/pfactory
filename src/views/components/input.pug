@@ -1,0 +1,8 @@
+mixin input(label, options={})
+  //- options = {iconSrc}
+  -
+    var {iconSrc} = options;
+  .input
+    input.input__field(style=(iconSrc ? `background-image: url(${iconSrc})` : ''))&attributes(attributes)
+    label.input__label
+      != label

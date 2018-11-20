@@ -1,0 +1,22 @@
+$trans: all 0.3s ease;
+
+$side-padding: 19px;
+
+$max-width-value: 1160px;
+$max-width: calc(#{$max-width-value} + 2 * #{$side-padding});
+$min-width: 320px;
+
+$blue-light: #99CEFF;
+$blue-main: #4084C0;
+$blue-dark: rgb(10, 73, 130);
+$blue-darken: rgb(41, 55, 80);
+$blue-darkest: #0B1B37;
+$blue-superdark: rgba(5, 11, 31, 0.6);
+
+$gray-lightest: #C4C4C4;
+$gray-light: #747474;
+$gray: rgba(153, 206, 255, 0.3);
+
+$green-main: #04D67E;
+
+$red-main: #FB5E5B;

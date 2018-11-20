@@ -1,0 +1,21 @@
+mixin pages
+  -
+    var pagesList = [
+      'index',
+      'loader-tips',
+      'loader-fail',
+      'loader-fail-restart',
+      'loader-fail-restart2',
+      'login',
+      'sign-up',
+      'wallet'
+    ];
+
+  .pages.js-pages
+    a.pages__button.js-pages-button(href='').
+      pages
+    ul
+      each item in pagesList
+        li
+          a(href=`${item}.html`)
+            != item
