@@ -1,0 +1,31 @@
+-
+  const sec8Data = [
+    {
+      text: 'Это было незабываемо!<br> Мне никто и никогда не создавал такой великолепный набор микро-сервисов.',
+      company: 'SCARRYDIGITAL,',
+      note: 'знает толк в качественных вещах',
+    },
+    {
+      text: 'Это было незабываемо! Мне никто и никогда не создавал такой великолепный набор микро-сервисов.',
+      company: 'SCARRYDIGITAL,',
+      note: 'знает толк в качественных вещах',
+    }
+  ]
+
++section.sec8.bg-black.color-white
+  +container
+    +slider('sec8', {pagination: {invert: true}})
+      each item in sec8Data
+        +sliderSlide('sec8')
+          .sec8__slider-slide-inner
+            p.sec8__quote-icon
+              em.
+                “
+            h5.sec8__quote
+              em
+                !=item.text
+            h4.sec8__company
+              !=item.company
+            p
+              em
+                !=item.note

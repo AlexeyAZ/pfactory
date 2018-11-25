@@ -1,22 +1,9 @@
-mixin button-small(options = {tag: 'a', type: 'bordered', iconSrc: ''})
+mixin button(options = {tag: 'a', invert: false, fill: false})
   -
-    var {tag, type, iconSrc} = options;
-  #{tag}.button-small(class=`button-small_${type}`)&attributes(attributes)
-    span.button-small__inner(class=(iconSrc ? 'button-small__inner_icon' : ''), style=(iconSrc ? `background-image: url(${iconSrc})` : ''))
+    const {tag, invert, fill} = options;
+    const buttonInvertCls = !invert ? '' : 'button_invert';
+    const buttonFillCls = !fill ? '' : 'button_fill';
+    const buttonTag = tag ? tag : 'a';
+  #{buttonTag}.button(class=`${buttonInvertCls} ${buttonFillCls}`)&attributes(attributes)
+    span.button__inner
       block
-
-mixin styled-button(tag='a', options={})
-  //- options = {iconSrc: ''}
-  -
-    var {iconSrc} = options;
-  #{tag}.styled-button&attributes(attributes)
-    span.styled-button__inner(class=(iconSrc ? 'styled-button__inner_icon' : ''), style=(iconSrc ? `background-image: url(${iconSrc})` : ''))
-      block
-
-mixin switch-block(firstBtn = {text: 'Currency'}, lastBtn = {text: 'Recent Wallets'})
-  -
-  .switch-block&attributes(attributes)
-    a(href='').switch-block__button
-      != firstBtn.text
-    a(href='').switch-block__button.switch-block__button_active
-      != lastBtn.text

@@ -5,27 +5,24 @@
 @import "sprite";
 @import "override";
 
+@import "components/section";
+@import "components/container";
+@import "components/header";
 @import "components/footer";
 @import "components/button";
 @import "components/input";
+@import "components/slider";
 
-@import "components/mobile-wrap";
-@import "components/mobile-content";
-@import "components/mobile-container";
 
-@import "components/metawallet-logo";
-
-@import "components/loader-content";
-@import "components/loader-message";
-@import "components/loader-status-icon";
-@import "components/loader-tip";
-@import "components/loader-fail-block";
-
-@import "components/wallet-content";
-@import "components/wallet";
-@import "components/wallet-card";
-
-@import "components/pages";
+@import "sections/sec1";
+@import "sections/sec2";
+@import "sections/sec3";
+@import "sections/sec4";
+@import "sections/sec5";
+@import "sections/sec6";
+@import "sections/sec7";
+@import "sections/sec8";
+@import "sections/sec9";
 
 @import "app";
 @import "helpers";

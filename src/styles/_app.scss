@@ -7,18 +7,32 @@
   }
 }
 
+html,
+body {
+  font-size: 14px;
+}
+
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  color: white;
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-family: $TTNorms;
+  font-weight: 300;
+  line-height: 20px;
   margin: 0;
   position: relative;
-  line-height: 1.5;
   min-width: $min-width;
+
+  @include media(w768) {
+    font-size: 16px;
+    line-height: 23px;
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .icon-icon_100 {

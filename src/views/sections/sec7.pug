@@ -1,0 +1,46 @@
+-
+  const sec7Data = [
+    {
+      src: 'sber.png',
+      alt: 'Сбербанк'
+    },
+    {
+      src: 'ds.png',
+      alt: 'Деловая среда'
+    },
+    {
+      src: 'kredo.svg',
+      alt: 'Кредо'
+    },
+    {
+      src: 'agima.png',
+      alt: 'Agima'
+    },
+    {
+      src: 'sber.png',
+      alt: 'Сбербанк'
+    },
+    {
+      src: 'ds.png',
+      alt: 'Деловая среда'
+    },
+    {
+      src: 'kredo.svg',
+      alt: 'Кредо'
+    },
+    {
+      src: 'agima.png',
+      alt: 'Agima'
+    }
+  ]
+
++section.sec7.bg-white
+  +container
+    h3.sec7__title.
+      Наши партнеры и клиенты
+
+    +slider('sec7')
+      each item in sec7Data
+        +sliderSlide('sec7')
+          .sec7__slider-slide-inner
+            img(src=`img/${item.src}` alt=item.alt).sec7__slider-image

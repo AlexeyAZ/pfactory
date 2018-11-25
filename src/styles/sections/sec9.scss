@@ -1,0 +1,167 @@
+.sec9 {
+  padding-top: 0;
+
+  @include media(w1024) {
+    padding-top: 90px;
+    padding-bottom: 20px;
+  }
+
+  &__column {
+    position: relative;
+    &_map {
+      margin-left: -$side-padding-mobile;
+      margin-right: -$side-padding-mobile;
+      margin-bottom: 50px;
+      padding-bottom: 100%;
+
+      @include media(w768) {
+        margin-left: -$side-padding-tablet;
+        margin-right: -$side-padding-tablet;
+        padding-bottom: 40%;
+      }
+
+      @include media(w1024) {
+        display: none;
+      }
+    }
+    @include media(w1024) {
+      padding-left: 50%;
+    }
+  }
+
+  &__column-info {
+    @include media(w1024) {
+      padding-left: 30px;
+    }
+
+    @include media(w1366) {
+      padding-left: 117px;
+    }
+  }
+
+  &__map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    &_desktop {
+      display: none;
+
+      @include media(w1024) {
+        display: block;
+        width: 50%;
+        z-index: 1;
+      }
+    }
+  }
+
+  &__adress {
+    @include mediaDown(w768) {
+      display: none;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 25px;
+    .sec9__contacts-container {
+      @include media(w768) {
+        &:first-child {
+          display: none;
+        }
+      }
+    }
+
+    @include media(w768) {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 520px;
+    }
+  }
+
+  &__contacts-container {
+    @include media(w768) {
+      width: 50%;
+    }
+  }
+
+  &__contacts-item {
+    display: flex;
+    align-items: flex-start;
+
+    &:hover {
+      .sec9__icon {
+        color: $blue;
+      }
+    }
+  }
+
+  &__contacts-icon {
+    text-align: center;
+    margin-right: 5px;
+    width: 20px;
+
+    @include media(w768) {
+      width: 25px;
+    }
+  }
+
+  &__icon {
+    transition: $trans;
+    color: $gray;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+
+    @include media(w768) {
+      font-size: 1.3rem;
+    }
+
+    &_anchor {
+      font-size: 1.2rem;
+    }
+
+    &_email {
+      font-size: 0.8rem;
+
+      @include media(w768) {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  &__contacts-text {
+    margin-top: -2px;
+  }
+
+  &__button-wrap {
+    margin-bottom: 40px;
+    
+    @include mediaDown(w768) {
+      text-align: center;
+      padding-top: 10px;
+    }
+
+    @include media(w1024) {
+      margin-bottom: 53px;
+    }
+  }
+
+  &__form-fields {
+    @include media(w768) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__form-fields-item {
+    @include media(w768) {
+      width: 49%;
+    }
+  }
+
+  &__form-textarea {
+    margin-bottom: 0;
+    height: 100%;
+  }
+}

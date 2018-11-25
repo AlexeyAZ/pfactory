@@ -1,0 +1,25 @@
+mixin social
+  .header__social&attributes(attributes)
+    a(href="").header__social-link
+      +icon('icon_email').header__icon
+    a(href="").header__social-link
+      +icon('icon_skype').header__icon.header__icon_skype
+    a(href="").header__social-link
+      +icon('icon_telegram').header__icon
+
+mixin header()
+  header.header&attributes(attributes)
+    +container.header__container
+      .header__left
+        a(href='./').header__logo
+          img(src="./img/logo.svg").header__logo-icon
+          img(src="./img/logo_invert.svg").header__logo-icon.header__logo-icon_invert
+        .header__menu
+          each item in menu
+            .header__menu-item
+              a(href=`#${item.href}`).header__menu-link
+                != item.text
+      .header__actions
+        +button().header__button.
+          Оставить заявку
+        +social.header__social_mobile

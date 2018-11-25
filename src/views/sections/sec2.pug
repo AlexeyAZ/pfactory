@@ -1,0 +1,36 @@
+-
+  const sec2Data = [
+    {
+      icon: 'services',
+      text: 'Отдельные сервисы и микросервисы'
+    },
+    {
+      icon: 'communication',
+      text: 'Единый стандарт коммуникаций'
+    },
+    {
+      icon: 'lightweight',
+      text: 'Легковесность реализованных систем'
+    },
+    {
+      icon: 'rocket',
+      text: 'Возможность быстрого роста'
+    }
+  ]
+
++section.sec2
+  +container
+    h3.sec2__title.
+      IT-решение повторяет структуру бизнеса и должно подчиняться следующим правилам:
+    
+    +slider('sec2')
+      each item in sec2Data
+        +sliderSlide('sec2')
+          .sec2__slider-slide-inner
+            .sec2__slider-content
+              img(src=`./img/${item.icon}.svg`, alt='')
+              p.sec2__slider-title
+                != item.text
+            .sec2__slider-description
+              p.
+                Здесь будет короткий текст о сервисах или преимуществах продукта

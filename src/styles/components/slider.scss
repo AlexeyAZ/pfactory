@@ -1,0 +1,90 @@
+.swiper-container-horizontal {
+  >.slider-pagination {
+    .swiper-pagination-bullet {
+      background-color: black;
+      opacity: 0.1;
+      margin: 0 3px;
+      height: 10px;
+      width: 10px;
+    
+      @include media(w1024) {
+        height: 13px;
+        width: 13px;
+      }
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: $blue;
+      opacity: 1;
+    }
+
+    &.invert {
+      .swiper-pagination-bullet {
+        background-color: white;
+      }
+
+      .swiper-pagination-bullet-active {
+        background-color: $blue;
+      }
+    }
+  }
+
+  .slider-slide {
+    height: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .slider-arrow {
+    transform: translateY(-50%);
+    background-image: none;
+    outline: none;
+    display: flex;
+    margin-top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: auto;
+    width: auto;
+
+    &.swiper-button-next {
+      right: 0;
+      padding-left: 20px;
+    }
+
+    &.swiper-button-prev {
+      transform: translateY(-50%) scaleX(-1);
+      left: 0;
+      padding-left: 20px;
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0;
+    }
+
+    &__icon {
+      transition: $trans;
+      font-size: 1.5rem;
+
+      @include media(w768) {
+        font-size: 2.2rem;
+      }
+
+      @include media(w1024) {
+        font-size: 3.1rem;
+      }
+
+      &:hover {
+        fill: $blue;
+      }
+    }
+  }
+
+  .slider-scrollbar {
+    &.invert {
+      background-color: #272727;
+      .swiper-scrollbar-drag {
+        background-color: white;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $side-padding-mobile;
+  padding-right: $side-padding-mobile;
+  position: relative;
+  max-width: $max-width-mobile;
+
+  @include media(w768) {
+    padding-left: $side-padding-tablet;
+    padding-right: $side-padding-tablet;
+    max-width: $max-width-tablet;
+  }
+}

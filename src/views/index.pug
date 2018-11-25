@@ -1,13 +1,24 @@
 extends layouts/_default-layout.pug
 
-include ./components/icon
-
-
-block append vars
-  -
-    title = 'Pfactory';
+include ./components/section.pug
+include ./components/container.pug
+include ./components/header.pug
+include ./components/button.pug
+include ./components/input.pug
+include ./components/icon.pug
+include ./components/slider.pug
 
 block content
   include ./svg/svg.pug
-  +icon('icon_100')
-  img(src="/img/logo.svg")
+  +header.main-header
+  .fix-section
+    include ./sections/sec1.pug
+    include ./sections/sec2.pug
+    include ./sections/sec3.pug
+  include ./sections/sec4.pug
+  include ./sections/sec5.pug
+  include ./sections/sec6.pug
+  include ./sections/sec7.pug
+  include ./sections/sec8.pug
+  include ./sections/sec9.pug
+

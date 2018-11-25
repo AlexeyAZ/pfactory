@@ -1,0 +1,24 @@
+mixin sliderArrow(options = {direction: 'next'})
+  -
+    const { direction } = options;
+  .slider-arrow(class=`swiper-button-${direction}`)&attributes(attributes)
+    +icon('icon_arrow_right').slider-arrow__icon
+
+
+mixin sliderSlide(prefix)
+  .swiper-slide.slider-slide(class=`${prefix}__slider-slide`)&attributes(attributes)
+    block
+
+mixin slider(prefix, options={pagination: {invert: false}, scrollbar: {invert: false}})
+  -
+    const {pagination, scrollbar} = options;
+    const paginationInvertClass = pagination && pagination.invert ? 'invert' : '';
+    const scrollbarInvertClass = scrollbar && scrollbar.invert ? 'invert' : '';
+
+  .swiper-container.slider-container(class=`${prefix}__slider`)&attributes(attributes)
+    .swiper-wrapper.slider-wrapper(class=`${prefix}__slider-wrapper`)
+      block
+    .swiper-pagination.slider-pagination(class=`${prefix}__slider-pagination ${paginationInvertClass}`)
+    +sliderArrow({direction: 'prev'})(class=`${prefix}__slider-arrow`)
+    +sliderArrow(class=`${prefix}__slider-arrow`)
+    .swiper-scrollbar.slider-scrollbar(class=`${prefix}__slider-scrollbar ${scrollbarInvertClass}`)

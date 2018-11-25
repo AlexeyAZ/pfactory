@@ -1,0 +1,97 @@
+.sec4 {
+  background-image: url('../img/sec4-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 50px;
+  padding-bottom: 0;
+
+  @include media(w768) {
+    padding-top: 70px;
+  }
+
+  @include media(w1024) {
+    padding-top: 90px;
+  }
+
+  &__title {
+    margin-bottom: 1em;
+  }
+
+  &__subtitle {
+    margin-bottom: 30px;
+
+    @include media(w768) {
+      margin-bottom: 50px;
+    }
+
+    br {
+      display: none;
+
+      @include media(w768) {
+        display: inline;
+      }
+    }
+  }
+
+  &__slide-inner {
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-height: 350px;
+  }
+
+  &__slider-pagination {
+    display: none;
+  }
+
+  &__slider-arrow.slider-arrow {
+    @include media(w1024) {
+      display: none;
+    }
+  }
+  
+  &__number {
+    transform: translateX(-50%);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+
+    @include media(w1024) {
+      transform: translateX(0);
+      left: 0;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+
+    @include media(w768) {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 80%;
+    }
+
+    @include media(w1024) {
+      text-align: left;
+      max-width: none;
+    }
+  }
+
+  &__slider-title {
+    font-family: $TTNorms;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 23px;
+    margin-bottom: 1.5em;
+
+    @include media(w768) {
+      font-size: 24px;
+      line-height: 34px;
+      margin-bottom: 0.2em;
+    }
+  }
+}

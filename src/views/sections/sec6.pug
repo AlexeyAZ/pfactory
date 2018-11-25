@@ -1,0 +1,72 @@
+mixin sec6Slide(cls)
+  +sliderSlide('sec6')(class=cls)
+    .sec6__slider-slide-inner&attributes(attributes)
+      block
+
+mixin people
+  .sec6__people
+    img(src="img/icon_people.svg").sec6__people-icon.sec6__people-icon_team
+    img(src="img/icon_100.svg").sec6__people-icon.sec6__people-icon_amount
+
+mixin about
+  .sec6__about&attributes(attributes)
+    h3.
+      О нас
+    p.
+      Мы — группа профессионалов, специализирующихся на разработке решений для рынка финтек. Нами сделаны десятки платформенных решений на базе Opensource технологий, таких как: Java, Python, Go, Ruby on Rails, ReactJS, GraphQL, PostreSQL, CLoudera, Camunda и пр..
+    p.
+      Мы охотно построим не только правильно спроектированные решения, но и процессы разработки по лучшим практикам CI/CD,DevOps. Вы сможете растить ваш продукт самостоятельно.
+    .sec6__button-wrap
+      +button().
+          Связаться с нами
+
+mixin sec6Slider(_mobile)
+  -
+    const sliderCls = _mobile ? 'sec6__slider_mobile' : 'sec6__slider_desktop'
+  +slider('sec6', {pagination: {invert: true}, scrollbar: {invert: true}})(class=sliderCls)
+    if !_mobile
+      +sec6Slide('sec6__slider-slide_main')
+        +about.sec6__about_desktop
+    +sec6Slide.sec6__slider-slide-photo
+      .sec6__frame
+        img(src="img/Vladimir.jpg").sec6__photo
+      .sec6__slider-slide-info
+        p.text-m.sec6__slider-name
+          strong.
+            Владимир Труфанов
+        p
+          em.
+            CIO
+        p.
+          Список скиллов через запятую, — Или списком, как вариант.
+    +sec6Slide.sec6__slider-slide-photo
+      .sec6__frame
+        img(src="img/Vladimir.jpg").sec6__photo
+      .sec6__slider-slide-info
+        p.text-m.sec6__slider-name
+          strong.
+            Владимир Труфанов
+        p
+          em.
+            CIO
+        p.
+          Список скиллов через запятую, — Или списком, как вариант.
+    +sec6Slide.sec6__people-wrap
+      .sec6__frame
+        +people
+        p.text-m.sec6__slider-name.sec6__people-title
+          strong.
+            программистов
+      .sec6__slider-slide-info
+        p.text-m.sec6__slider-name
+          strong.
+            программистов
+      +button.sec6__people-button.
+        Связаться с нами
+
++section(id=menu[3].href).sec6.color-white
+  +container
+    +about.sec6__about_tablet
+    +sec6Slider(true)
+    +sec6Slider
+  img(src="./img/our_skills.svg").sec6__skills

@@ -46,7 +46,15 @@
     "gulp-svgmin": "^1.2.3",
     "gulp-typograf": "^3.0.0",
     "highcharts": "^6.1.1",
+    "jquery": "^3.3.1",
+    "mobile-detect": "^1.4.3",
+    "pagepiling.js": "^1.5.5",
+    "parallax-js": "^3.1.0",
     "sass-module-importer": "^1.4.0",
-    "svg4everybody": "^2.1.9"
+    "scrollmagic": "^2.0.6",
+    "scrollmonitor": "^1.2.4",
+    "smooth-scroll": "^15.0.0",
+    "svg4everybody": "^2.1.9",
+    "swiper": "^4.4.2"
   }
 }

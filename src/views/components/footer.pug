@@ -1,11 +1,6 @@
-mixin footer(version, options = {slogan: true})
-  -
-    var {slogan} = options;
+mixin footer
   footer.footer
-    +mobile-container.ta-center
-      img(src=slogan ? 'img/logo-with-slogan.svg' : 'img/logo-small-blue.svg').footer__logo
-      p.text-m.footer__version
-        |ver.
-        |
-        |
-        != version
+    p.
+      Pfactory © 2019, All rights reserved
+    a(href=social.scarryDigital.href target="_blank")
+      img(src="./img/logo_minimal.svg" alt=title)

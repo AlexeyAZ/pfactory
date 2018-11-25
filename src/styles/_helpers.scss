@@ -1,5 +1,4 @@
 .mb {
-
   &-0 {
     margin-bottom: 0;
   }
@@ -60,8 +59,21 @@
 }
 
 .color {
-
-  &-blue-main {
-    color: $blue-light;
+  &-white {
+    color: white;
   }
+}
+
+.bg {
+  &-black {
+    background-color: $black;
+  }
+  &-white {
+    background-color: white;
+  }
+}
+
+.disable-actions {
+  user-select: none;
+  pointer-events: none;
 }

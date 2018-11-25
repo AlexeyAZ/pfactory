@@ -1,8 +1,0 @@
-mixin loader-status-icon(type='connecting', options={ripple: true})
-  -
-    var {ripple} = options;
-    var cls = '';
-    cls += ripple ? 'loader-status-icon__inner_ripple ' : ' ';
-  .loader-status-icon&attributes(attributes)
-    .loader-status-icon__inner(class=(ripple ? 'loader-status-icon__inner_ripple' : ''))
-      img(src=`img/icon-${type}.svg`, alt='').loader-status-icon__img

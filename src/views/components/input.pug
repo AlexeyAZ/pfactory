@@ -1,8 +1,6 @@
-mixin input(label, options={})
-  //- options = {iconSrc}
-  -
-    var {iconSrc} = options;
+mixin input(type)
   .input
-    input.input__field(style=(iconSrc ? `background-image: url(${iconSrc})` : ''))&attributes(attributes)
-    label.input__label
-      != label
+    if type === 'textarea'
+      textarea.input__field&attributes(attributes)
+    else
+      input.input__field&attributes(attributes)

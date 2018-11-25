@@ -1,0 +1,77 @@
+include ../components/footer.pug
+
+-
+  const sec9Data = [
+    {
+      icon: 'icon_anchor',
+      text: social.adress.text,
+      class: 'anchor'
+    },
+    {
+      icon: 'icon_email',
+      text: social.email.text,
+      href: social.email.href,
+      class: 'email'
+    },
+    {
+      icon: 'icon_skype',
+      text: social.skype.text,
+      href: social.skype.href
+    },
+    {
+      icon: 'icon_phone',
+      text: social.phone.text,
+      href: social.phone.href
+    },
+    {
+      icon: 'icon_telegram',
+      text: social.telegram.text,
+      href: social.telegram.href
+    }
+  ]
+
+mixin sec9Contact(item)
+  -
+    const cls = item.class ? `sec9__icon_${item.class}` : '';
+  if item.href
+    p.sec9__contacts-container&attributes(attributes)
+      a(href=item.href).sec9__contacts-item
+        span.sec9__contacts-icon
+          +icon(item.icon)(class=cls).sec9__icon
+        span.sec9__contacts-text
+          != item.text
+  else
+    p.sec9__contacts-container&attributes(attributes)
+      span.sec9__contacts-item
+        span.sec9__contacts-icon
+          +icon(item.icon)(class=cls).sec9__icon
+        span.sec9__contacts-text
+          != item.text
+
++section(id=menu[4].href).sec9.bg-white
+  .sec9__map.sec9__map_desktop
+  +container.sec9__container
+    .sec9__column.sec9__column_map
+      .sec9__map.sec9__map_mobile
+    .sec9__column
+      .sec9__column-info
+        h3.
+          Контакты
+        p.
+          Позвоните нам или оставьте вашу заявку. Мы свяжемся с вами в течение часа.
+        +sec9Contact(sec9Data[0]).sec9__adress
+        .sec9__contacts
+          each item in sec9Data
+            +sec9Contact(item)
+        form
+          .sec9__form-fields
+            .sec9__form-fields-item.sec9__form-inputs
+              +input(placeholder="Ваше имя")
+              +input(placeholder="Ваш e-mail")
+              +input(placeholder="Ваш телефон")
+            .sec9__form-fields-item
+              +input('textarea')(placeholder="Сообщение" rows="8").sec9__form-textarea
+          .sec9__button-wrap
+            +button({invert: true}).
+              Отправить заявку
+      +footer

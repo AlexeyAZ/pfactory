@@ -1,0 +1,81 @@
+include ../components/header.pug
+
+-
+  const sec1Data = [
+    {
+      icon: 'icon_telescope',
+      text: 'Мы создаем любые платформы. От больших и сложных...',
+      image: 'wheel'
+    },
+    {
+      icon: 'icon_microscope',
+      text: '...до простых платформенных решений.',
+      image: 'sheme'
+    }
+  ];
+
+mixin wheel
+  .sec1__wheel&attributes(attributes)
+    .sec1__wheel-inner
+      img(src='./img/wheel.svg').sec1__wheel-img
+      img(src='./img/wheel_text.svg').sec1__wheel-text
+
+mixin sheme(cls)
+  .sec1__sheme(class=cls)
+    .sec1__sheme-inner
+      p.sec1__sheme-text.sec1__sheme-text_data.
+        Агрегация <br>данных
+      p.sec1__sheme-text.sec1__sheme-text_groups.
+        Рассылка <br>по группам
+      p.sec1__sheme-text.sec1__sheme-text_users.
+        Классификация <br>пользователей
+      img(src=`./img/sheme.svg`)&attributes(attributes)
+
++section(id=menu[0].href).sec1.color-white
+  +header.sec1__mobile-header
+  +container.sec1__container
+    .sec1__content
+      .sec1__column.sec1__column_text
+        h1.
+          Pfactory — это <br> фабрика платформ
+        p.
+          Если проанализировать любой растущий бизнес, в его сердце мы всегда найдем платформу. Платформа — это не просто ИТ-решение, это идеология, по которой бизнес может расти.
+
+        .sec1__platforms.sec1__platforms_desktop
+          .sec1__platforms-title.sec1__platforms-title_first
+            +icon(sec1Data[0].icon).sec1__platforms-icon
+            p.text-l
+              != sec1Data[0].text
+
+          .sec1__platforms-title.sec1__platforms-title_second
+            +icon(sec1Data[1].icon).sec1__platforms-icon
+            p.text-l
+              != sec1Data[1].text
+        
+        .sec1__platforms.sec1__platforms_mobile
+          +slider('sec1')
+            each item in sec1Data
+              +sliderSlide('sec1')
+                .sec1__platforms-title
+                  +icon(item.icon).sec1__platforms-icon
+                  p.text-l
+                    != item.text
+                .sec1__platforms-image-wrap
+                  if item.image === 'wheel'
+                    +wheel.sec1__platforms-wheel
+                  else
+                    +sheme.sec1__platforms-img
+      
+      .sec1__column.sec1__column_image
+        +wheel.sec1__wheel_desktop
+
+        +sheme('sec1__sheme_desktop')
+
+    .sec1__mouse
+      +icon('icon_mouse').sec1__mouse-icon
+      span.
+        Листайте вниз
+  .sec1__button-wrap
+    +button({fill: true}).
+      Оставить заявку
+  +social.sec1__social

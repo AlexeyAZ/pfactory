@@ -1,155 +1,48 @@
-.button-small {
-  $v-padding: 16px;
-  $h-padding: 32px;
-  $icon-size: 15px;
-
-  transition: border-color 0.3s ease;
-  border: 2px solid transparent;
-  border-radius: 25px;
-  display: inline-block;
-  color: $blue-light;
-  font-size: 10px;
-  line-height: 1;
-  text-align: center;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 0 $h-padding;
-
-  &__inner {
-    background-position: right center;
-    background-repeat: no-repeat;
-    background-size: $icon-size;
-    display: inline-block;
-    padding: $v-padding $h-padding;
-
-    &_icon {
-      padding: $v-padding ($icon-size + 14px) $v-padding 0;
-    }
-  }
-
-  &_bordered {
-    border: 2px solid $blue-darken;
-    background-color: transparent;
-    color: white;
-  }
-
-  &_primary {
-    background-color: $blue-dark;
-  }
-
-  img {
-    margin-left: 15px;
-  }
-
-  &:hover {
-    border-color: $blue-light;
-  }
-}
-
-.styled-button {
-  $border-width: 3px;
-  $padding: 23px;
-  $icon-size: 16px;
-
-  transition: border-color 0.3s ease, color 0.3s ease;
-  border: $border-width solid #1F77C8;
+.button {
+  transition: $trans;
+  border: 2px solid white;
   border-radius: 50px;
-  display: inline-block;
-  color: $blue-light;
-  font-size: 14px;
+  cursor: pointer;
   font-weight: 500;
-  line-height: 1;
-  text-align: center;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 0 $padding;
-  position: relative;
+  line-height: 19px;
+  color: white;
+  padding: 9px 20px;
 
-  &:before,
-  &:after {
-    content: '';
-    transition: left 0.3s ease, right 0.3s ease, width 0.3s ease;
-    position: absolute;
-    height: $border-width;
-    width: 100%;
-  }
-
-  &:before {
-    background-image: linear-gradient(to right, rgba(255,255,255, 0) 0%, rgba(255,255,255, 0) 10%, rgba(255,255,255, 1) 30%, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0.2) 80%, rgba(255,255,255, 0) 100%);
-    left: 0;
-    top: -$border-width;
-  }
-
-  &:after {
-    background-image: linear-gradient(to right, rgba(255,255,255, 0) 0%, rgba(255,255,255, 0.4) 80%, rgba(255,255,255, 0) 90%, rgba(255,255,255, 0) 100%);
-    right: 0;
-    bottom: -$border-width;
-  }
-
-  &__inner {
-    background-position: right center;
-    background-repeat: no-repeat;
-    background-size: $icon-size;
-    display: inline-block;
-    padding: $padding 0;
-
-    &_icon {
-      padding: $padding ($icon-size + 8px) $padding 0;
-    }
+  @include media(w768) {
+    padding-left: 25px;
+    padding-right: 25px;
   }
 
   &:hover {
-    color: white;
-
-    &:before {
-      left: 10%;
-      width: 90%;
-    }
-
-    &:after {
-      right: 10%;
-      width: 90%;
-    }
+    border-color: $blue;
   }
-}
 
-.switch-block {
-  display: flex;
-  font-size: 11px;
-
-  &__button {
-    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 0;
-    color: $blue-main;
-    padding: 10px;
-    text-decoration: none;
-    text-align: center;
-
-    &:first-child {
-      border-radius: 4px 0 0 4px;
-      border-top: 1px solid rgba(75, 140, 198, 0.5);
-      border-bottom: 1px solid rgba(75, 140, 198, 0.5);
-      border-left: 1px solid rgba(75, 140, 198, 0.5);
-    }
-
-    &:last-child {
-      border-radius: 0 4px 4px 0;
-      border-top: 1px solid rgba(75, 140, 198, 0.5);
-      border-bottom: 1px solid rgba(75, 140, 198, 0.5);
-      border-right: 1px solid rgba(75, 140, 198, 0.5);
-    }
-
-    &_active {
-      background-color: $blue-main;
-      border-color: $blue-main;
-      color: white;
-    }
+  &_invert {
+    border-color: $blue;
+    color: black;
 
     &:hover {
-      border-color: $blue-main;
+      border-color: $blue;
+      background-color: $blue;
       color: white;
     }
+  }
+
+  &_fill {
+    background-color: $blue;
+    border-color: $blue;
+    color: white;
+  }
+}
+
+button {
+  &.button {
+
+  }
+}
+
+a {
+  &.button {
+    display: inline-flex;
   }
 }

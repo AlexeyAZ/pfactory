@@ -58,7 +58,7 @@ gulp.task('scripts', function () {
   return gulp.src([folders.src + '/scripts/app.js'])
     .pipe(webpack({
       plugins: [
-        new webpack.webpack.optimize.UglifyJsPlugin({ minimize: true })
+        // new webpack.webpack.optimize.UglifyJsPlugin({ minimize: true })
       ],
       module: {
         rules: [

@@ -1,0 +1,108 @@
+@import '../../../node_modules/swiper/dist/css/swiper.min.css';
+
+.sec2 {
+
+  &__title {
+    margin-bottom: 35px;
+
+    @include media(w1024) {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__slider {
+    padding-bottom: 30px;
+
+    @include media(w768) {
+      padding-bottom: 50px;
+    }
+
+    @include media(w1024) {
+      padding-bottom: 0;
+    }
+  }
+
+  &__slider-wrapper {
+    align-items: stretch;
+  }
+
+  &__slider-slide {
+    @include media(w1024) {
+      &:hover {
+        .sec2__slider-content {
+          opacity: 0;
+        }
+        .sec2__slider-description {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__slider-slide-inner {
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  &__slider-content {
+    transition: 0.3s ease opacity;
+  }
+
+  &__slider-title {
+    font-size: 16px;
+    font-weight: 500;
+    padding-top: 12px;
+
+    @include media(w768) {
+      padding-top: 25px;
+    }
+  }
+
+  &__slider-pagination {
+    display: flex;
+    justify-content: center;
+
+    @include media(w768) {
+      display: none;
+    }
+  }
+  
+  &__slider-arrow {
+    &.slider-arrow {
+      @include media(w768) {
+        display: none;
+      }
+    }
+  }
+
+  &__slider-scrollbar {
+    display: none;
+
+    @include media(w768) {
+      display: block;
+    }
+
+    @include media(w1024) {
+      display: none;
+    }
+  }
+
+  &__slider-description {
+
+    @include media(w1024) {
+      transition: 0.3s ease opacity;
+      background-color: white;
+      border: 3px solid $blue;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      opacity: 0;
+      padding: 10px 30px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
