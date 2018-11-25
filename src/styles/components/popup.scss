@@ -6,6 +6,7 @@
   justify-content: center;
   visibility: hidden;
   opacity: 0;
+  overflow: auto;
   padding-left: $side-padding-mobile;
   padding-right: $side-padding-mobile;
   position: fixed;
@@ -35,8 +36,13 @@
 
   &__close {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 10px;
+    right: 10px;
+
+    @include media(w768) {
+      top: 20px;
+      right: 20px;
+    }
 
     &:hover {
       .popup__close-icon {
@@ -47,6 +53,11 @@
 
   &__close-icon {
     transition: $trans;
+    font-size: 1.3rem;
     fill: $gray-light;
   }
+}
+
+.popup-open {
+  overflow: hidden;
 }

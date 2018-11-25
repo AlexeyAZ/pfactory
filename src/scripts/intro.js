@@ -40,24 +40,26 @@ export default class Intro {
   }
 
   onWheel(e) {
-    if (!this.delta || e.deltaY > 0) {
-      const delta = e.deltaY;
-      this.delta = delta;
+    if (!document.body.classList.contains('popup-open')) {
+      if (!this.delta || e.deltaY > 0) {
+        const delta = e.deltaY;
+        this.delta = delta;
 
-      clearTimeout(this.timer);
+        clearTimeout(this.timer);
 
-      this.timer = setTimeout(() => {
-        if (delta > 0) {
-          this.showStep(2);
-          e.preventDefault();
-        }
-      }, 300);
-    }
+        this.timer = setTimeout(() => {
+          if (delta > 0) {
+            this.showStep(2);
+            e.preventDefault();
+          }
+        }, 300);
+      }
 
 
-    if (window.pageYOffset === 0 && e.deltaY < 0) {
-      this.showStep(1);
-      e.preventDefault();
+      if (window.pageYOffset === 0 && e.deltaY < 0) {
+        this.showStep(1);
+        e.preventDefault();
+      }
     }
   }
 

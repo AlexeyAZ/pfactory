@@ -41,11 +41,15 @@ body {
 
 .index {
   &__form-fields {
-    display: flex;
-    justify-content: space-between;
+    @include media(w768) {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   &__form-fields-item {
-    width: 49%;
+    @include media(w768) {
+      width: 49%;
+    }
   }
 }
