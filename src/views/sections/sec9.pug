@@ -63,15 +63,15 @@ mixin sec9Contact(item)
         .sec9__contacts
           each item in sec9Data
             +sec9Contact(item)
-        form
+        form.sec9__form
           .sec9__form-fields
             .sec9__form-fields-item.sec9__form-inputs
-              +input(placeholder="Ваше имя")
-              +input(placeholder="Ваш e-mail")
-              +input(placeholder="Ваш телефон")
+              +input(placeholder="Ваше имя", required)
+              +input(placeholder="Ваш e-mail", required)
+              +input(placeholder="Ваш телефон", required)
             .sec9__form-fields-item
               +input('textarea')(placeholder="Сообщение" rows="8").sec9__form-textarea
           .sec9__button-wrap
-            +button({invert: true}).
+            +button({tag: 'button', invert: true}).
               Отправить заявку
       +footer

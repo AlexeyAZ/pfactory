@@ -17,30 +17,35 @@
     padding: 14px 20px;
     width: 100%;
 
-    @include media(w768) {
-      font-size: 16px;
+    &:focus {
+      border-color: $blue;
+      color: black;
     }
 
     &::placeholder {
       color: $gray-dark;
     }
 
-    &:focus {
-      border-color: $blue;
-      color: black;
-      
-      ~ .input__label {
-        transform: translateY(10px);
-        top: 0;
+    &_valid {
+      border-color: $green;
+
+      &:focus {
+        border-color: $green;
       }
     }
 
-    &:valid {
-
-      ~ .input__label {
-        transform: translateY(10px);
-        top: 0;
+    &_invalid {
+      border-color: $red;
+      &::placeholder {
+        color: $red;
       }
+      &:focus {
+        border-color: $red;
+      }
+    }
+
+    @include media(w768) {
+      font-size: 16px;
     }
   }
 }

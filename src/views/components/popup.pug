@@ -1,0 +1,6 @@
+mixin popup
+  .popup&attributes(attributes)
+    .popup__inner
+      a(href="").popup__close
+        +icon('icon_cross').popup__close-icon
+      block

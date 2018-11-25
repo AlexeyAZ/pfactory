@@ -9,6 +9,8 @@ import Intro from './Intro';
 import Header from './Header';
 import shemeParallax from './ShemeParallax';
 import FixSection from './FixSection';
+import Popup from './Popup';
+import Form from './Form';
 
 const app = {
   load: () => {
@@ -27,6 +29,16 @@ const app = {
     document.addEventListener('scrollStart', () => {
       introHandlers.toggleLock('disable');
     });
+
+    const formPopup = new Popup('.js-form-popup');
+    formPopup.init();
+
+    const buttons = document.querySelectorAll('a.button');
+    [...buttons].forEach(button => button.addEventListener('click', e => {
+      e.preventDefault();
+      console.log(e)
+      formPopup.open();
+    }));
 
     const headerHandlers = new Header();
     headerHandlers.init();
@@ -127,6 +139,12 @@ const app = {
       slidesPerView: 1,
       spaceBetween: 20
     });
+
+    const sec9FormHandlers = new Form('.sec9__form');
+    sec9FormHandlers.init();
+
+    const popupFormHandlers = new Form('.index__form');
+    popupFormHandlers.init();
   }
 };
 

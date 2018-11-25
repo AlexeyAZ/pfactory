@@ -1,0 +1,52 @@
+.popup {
+  transition: $trans;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  padding-left: $side-padding-mobile;
+  padding-right: $side-padding-mobile;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  min-width: $min-width;
+  z-index: 11;
+
+  &_open {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  &__inner {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px 20px;
+    position: relative;
+    max-width: 770px;
+
+    @include media(w768) {
+      padding: 50px 37px;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    &:hover {
+      .popup__close-icon {
+        fill: black;
+      }
+    }
+  }
+
+  &__close-icon {
+    transition: $trans;
+    fill: $gray-light;
+  }
+}

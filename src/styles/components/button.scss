@@ -1,5 +1,6 @@
 .button {
   transition: $trans;
+  background-color: transparent;
   border: 2px solid white;
   border-radius: 50px;
   cursor: pointer;
@@ -33,11 +34,23 @@
     border-color: $blue;
     color: white;
   }
+
+  &[disabled] {
+    background-color: $gray-lighten;
+    border-color: $gray-lighten;
+    color: $gray-dark;
+
+    &:hover {
+      background-color: $gray-lighten;
+      border-color: $gray-lighten;
+      color: $gray-dark;
+    }
+  }
 }
 
 button {
   &.button {
-
+    outline: none;
   }
 }
 

@@ -38,3 +38,14 @@ body {
 .icon-icon_100 {
   fill: black;
 }
+
+.index {
+  &__form-fields {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__form-fields-item {
+    width: 49%;
+  }
+}
