@@ -27,6 +27,12 @@
   }
 
   &__slider-slide {
+    @include media(w768) {
+      &.slider-slide {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
     @include media(w1024) {
       &:hover {
         .sec2__slider-content {

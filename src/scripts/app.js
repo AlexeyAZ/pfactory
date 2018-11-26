@@ -36,7 +36,6 @@ const app = {
     const buttons = document.querySelectorAll('a.button');
     [...buttons].forEach(button => button.addEventListener('click', e => {
       e.preventDefault();
-      console.log(e)
       formPopup.open();
     }));
 
