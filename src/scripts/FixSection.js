@@ -1,5 +1,5 @@
-import ScrollMagic from 'scrollmagic';
-import MobileDetect from 'mobile-detect';
+import ScrollMagic from '../../node_modules/scrollmagic';
+import MobileDetect from '../../node_modules/mobile-detect';
 
 export default class FixSection {
   init() {

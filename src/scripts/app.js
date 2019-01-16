@@ -1,7 +1,7 @@
-import 'babel-polyfill';
+import '../../node_modules/babel-polyfill';
 import SmoothScroll from 'smooth-scroll';
 import svg4everybody from 'svg4everybody';
-import MobileDetect from 'mobile-detect';
+import MobileDetect from '../../node_modules/mobile-detect';
 
 import Slider from './slider';
 import makeMap from './map';
