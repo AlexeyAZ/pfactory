@@ -5,7 +5,7 @@ import MobileDetect from 'mobile-detect';
 
 import Slider from './slider';
 import makeMap from './map';
-import Intro from './Intro';
+import Intro from './intro';
 import Header from './Header';
 import shemeParallax from './ShemeParallax';
 import FixSection from './FixSection';
