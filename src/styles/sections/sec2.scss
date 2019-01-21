@@ -12,6 +12,7 @@
 
   &__slider {
     padding-bottom: 30px;
+    width: 100%;
 
     @include media(w768) {
       padding-bottom: 50px;

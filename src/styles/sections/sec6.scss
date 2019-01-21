@@ -109,6 +109,7 @@
     position: relative;
 
     &:before {
+      display: none;
       content: '';
       background-color: white;
       position: absolute;

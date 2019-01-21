@@ -167,7 +167,8 @@ gulp.task('build', [
   'pug',
   'sass',
   'scripts',
-  'lint'
+  'lint',
+  'svgSpriteBuild'
 ]);
 
 

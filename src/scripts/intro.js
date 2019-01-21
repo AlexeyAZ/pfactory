@@ -52,7 +52,7 @@ export default class Intro {
             this.showStep(2);
             e.preventDefault();
           }
-        }, 300);
+        }, 100);
       }
 
 
@@ -72,10 +72,12 @@ export default class Intro {
     }
 
     if (!mobile) {
-      if (window.pageYOffset > 0) {
-        this.showStep(2);
-      }
-      document.addEventListener('wheel', this.onWheel);
+      setTimeout(() => {
+        if (window.pageYOffset > 0) {
+          this.showStep(2);
+        }
+        document.addEventListener('wheel', this.onWheel);
+      }, 100);
     }
   }
 }

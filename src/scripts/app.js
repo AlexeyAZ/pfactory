@@ -26,6 +26,7 @@ const app = {
     const scroll = new SmoothScroll('a[href*="#"]', {
       header: '.header'
     });
+    // event from SmoothScroll
     document.addEventListener('scrollStart', () => {
       introHandlers.toggleLock('disable');
     });
