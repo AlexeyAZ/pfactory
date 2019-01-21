@@ -23,8 +23,10 @@
   }
 
   &__slider {
-    padding-left: 40px;
-    padding-right: 40px;
+    @include media(w768) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
   }
 
   &__slider-slide {
