@@ -83,6 +83,9 @@ const app = {
       spaceBetween: 20,
       breakpoints: {
         1024: {
+          slidesPerView: 3
+        },
+        1366: {
           slidesPerView: 4
         }
       }
