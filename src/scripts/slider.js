@@ -11,7 +11,8 @@ export default class Slider {
       },
       pagination: {
         el: '.swiper-pagination',
-        type: 'bullets'
+        type: 'bullets',
+        clickable: true
       },
       scrollbar: {
         el: '.swiper-scrollbar',
