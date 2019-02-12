@@ -1,10 +1,10 @@
 mixin social
   .header__social&attributes(attributes)
-    a(href="").header__social-link
+    a(href=social.email.href).header__social-link
       +icon('icon_email').header__icon
-    a(href="").header__social-link
+    a(href=social.skype.href).header__social-link
       +icon('icon_skype').header__icon.header__icon_skype
-    a(href="").header__social-link
+    a(href=social.telegram.href).header__social-link
       +icon('icon_telegram').header__icon
 
 mixin header()
