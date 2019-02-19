@@ -18,15 +18,18 @@
     },
     {
       src: 'dbi.svg',
-      alt: 'DBI'
+      alt: 'DBI',
+      class: 'dbi'
     },
     {
       src: 'ylab.svg',
-      alt: 'YLAB'
+      alt: 'YLAB',
+      class: 'ylab'
     },
     {
       src: 'rt.png',
-      alt: 'Ростелеком'
+      alt: 'Ростелеком',
+      class: 'rt'
     }
   ]
 
@@ -39,4 +42,4 @@
       each item in sec7Data
         +sliderSlide('sec7')
           .sec7__slider-slide-inner
-            img(src=`img/${item.src}` alt=item.alt).sec7__slider-image
+            img(src=`img/${item.src}` alt=item.alt class=item.class ? `sec7__slider-image_${item.class}` : '').sec7__slider-image

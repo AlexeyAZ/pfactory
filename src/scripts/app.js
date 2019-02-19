@@ -140,7 +140,8 @@ const app = {
     const sec8Slider = new Slider();
     sec8Slider.createSlider('.sec8__slider', {
       slidesPerView: 1,
-      spaceBetween: 20
+      spaceBetween: 20,
+      autoHeight: true
     });
 
     const sec9FormHandlers = new Form('.sec9__form');
