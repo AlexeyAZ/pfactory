@@ -14,5 +14,6 @@ html
     link(href="favicon.png", rel="icon", type="image/png", sizes="16x16")
     link(href="styles/main.css?v=" + Date.now(), rel="stylesheet")
   body.overflow-hidden
+    include ../common/marketing.pug
     block content
     script(src="scripts/app.js?v=" + Date.now())
