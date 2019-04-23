@@ -1,10 +1,12 @@
 function initMap(_map, coords, adress) {
+  // eslint-disable-next-line no-undef
   const map = new google.maps.Map(_map, {
     zoom: 17,
     center: coords,
     disableDefaultUI: true
   });
 
+  // eslint-disable-next-line no-undef, no-unused-vars
   const marker = new google.maps.Marker({
     position: coords,
     map,
@@ -23,7 +25,7 @@ function siteMaps(elements) {
 }
 
 function loadMapScript(src, callback) {
-  let script = document.createElement('script');
+  const script = document.createElement('script');
   script.type = 'text/javascript';
   if (callback) {
     script.onload = callback;

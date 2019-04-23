@@ -23,6 +23,7 @@ const app = {
     const introHandlers = new Intro();
     introHandlers.init();
 
+    // eslint-disable-next-line no-unused-vars
     const scroll = new SmoothScroll('a[href*="#"]', {
       header: '.header'
     });

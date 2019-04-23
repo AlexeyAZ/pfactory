@@ -65,7 +65,7 @@ export default class Form {
     this.setButtonState();
 
     [...fields].forEach(input => {
-      input.addEventListener('input', e => {
+      input.addEventListener('input', () => {
         this.validateField(input);
       });
     });
