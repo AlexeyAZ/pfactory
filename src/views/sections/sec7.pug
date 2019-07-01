@@ -35,11 +35,35 @@
 
 +section.sec7.bg-white
   +container
-    h3.sec7__title.
-      Наши партнеры и клиенты
+    .sec7__head
+      h3.sec7__title.
+        В центре списка наших проектов
+      a(href="./docs/pfactory_pres_web.pdf" target="_blank").sec7__save-presentation-link
+        +icon('icon_download').sec7__save-presentation-icon
+        span.
+          Скачать презентацию
 
-    +slider('sec7')
+    +slider('sec7', {pagination: {invert: false }})
       each item in sec7Data
         +sliderSlide('sec7')
           .sec7__slider-slide-inner
-            img(src=`img/${item.src}` alt=item.alt class=item.class ? `sec7__slider-image_${item.class}` : '').sec7__slider-image
+            .sec7__slider-slide-block.sec7__slider-slide-block_image
+              img(src=`img/${item.src}` alt=item.alt class=item.class ? `sec7__slider-image_${item.class}` : '').sec7__slider-image
+            .sec7__slider-slide-block
+              .sec7__slider-slide-description
+                p.text-m.fw-bold.sec7__slider-slide-title.
+                  Платформа Деловая среда
+                p.
+                  Система онлайн-образования — курсы, видео уроки, тесты и опросы, вебинары, сообщества, новости и блоги.
+                p.sec7__slider-slide-technologies
+                  strong.
+                    Технологии: 
+                  |
+                  |
+                  |Java Play, Java Spring, React JS, Kafka, Postgres
+                span
+                  strong.
+                    Количество часов: 
+                  |
+                  |
+                  |20 000

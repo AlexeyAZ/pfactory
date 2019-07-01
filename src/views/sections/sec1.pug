@@ -3,13 +3,13 @@ include ../components/header.pug
 -
   const sec1Data = [
     {
-      icon: 'icon_telescope',
-      text: 'Мы создаем любые платформы. От больших и сложных...',
+      icon: 'icon_create_platform',
+      text: 'Создание платформ',
       image: 'wheel'
     },
     {
-      icon: 'icon_microscope',
-      text: '...до простых платформенных решений.',
+      icon: 'icon_buy_people',
+      text: 'Продажа людей',
       image: 'sheme'
     }
   ];
@@ -18,7 +18,7 @@ mixin wheel
   .sec1__wheel&attributes(attributes)
     .sec1__wheel-inner
       img(src='./img/wheel.svg').sec1__wheel-img
-      img(src='./img/wheel_text.svg').sec1__wheel-text
+      //- img(src='./img/wheel_text.svg').sec1__wheel-text
 
 mixin sheme(cls)
   .sec1__sheme(class=cls)
@@ -41,18 +41,14 @@ mixin sheme(cls)
         p.
           Если проанализировать любой растущий бизнес, в его сердце мы всегда найдем платформу. Платформа — это не просто ИТ-решение, это идеология, по которой бизнес может расти.
 
-        .sec1__platforms.sec1__platforms_desktop
-          .sec1__platforms-title.sec1__platforms-title_first
-            +icon(sec1Data[0].icon).sec1__platforms-icon
-            p.text-l
-              != sec1Data[0].text
-
-          .sec1__platforms-title.sec1__platforms-title_second
-            +icon(sec1Data[1].icon).sec1__platforms-icon
-            p.text-l
-              != sec1Data[1].text
+        .sec1__platforms
+          each item in sec1Data
+            .sec1__platforms-title
+              +icon(item.icon).sec1__platforms-icon
+              p.sec1__platforms-text
+                != item.text
         
-        .sec1__platforms.sec1__platforms_mobile
+        //- .sec1__platforms.sec1__platforms_mobile
           +slider('sec1')
             each item in sec1Data
               +sliderSlide('sec1')
@@ -67,14 +63,12 @@ mixin sheme(cls)
                     +sheme.sec1__platforms-img
       
       .sec1__column.sec1__column_image
-        +wheel.sec1__wheel_desktop
-
-        +sheme('sec1__sheme_desktop')
+        +wheel
 
     .sec1__mouse
       +icon('icon_mouse').sec1__mouse-icon
       span.
-        Листайте вниз
+        Just scroll it
   .sec1__button-wrap
     +button({fill: true}).
       Оставить заявку

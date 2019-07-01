@@ -20,6 +20,11 @@ export default class Slider {
       },
       breakpointsInverse: true
     };
+    this.getSlider = this.getSlider.bind(this);
+  }
+
+  getSlider() {
+    return this.swiper;
   }
 
   createSlider(_element, _options) {

@@ -17,6 +17,7 @@
   }
 
   &__title {
+    text-align: center;
     @include media(w768) {
       margin-bottom: 1.3em;
     }
@@ -83,6 +84,7 @@
   }
 
   &__slide-info {
+    text-align: center;
     @include media(w768) {
       flex-grow: 1;
       flex-shrink: 0;
@@ -118,6 +120,14 @@
 
   &__slide-amount {
     font-size: 24px;
+  }
+
+  &__slide-button {
+    margin-top: 26px;
+  }
+
+  &__slide-button-icon {
+    font-size: 2rem;
   }
 
   &__slider-pagination {

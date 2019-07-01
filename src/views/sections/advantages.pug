@@ -1,0 +1,53 @@
+-
+  const sliderData = [
+    {
+      name: 'disadvantages',
+      icon: 'icon_telescope',
+      title: 'Недостатки монолитных систем',
+      list: [
+        'Отдельные сервисы и Отдельные сервисы и',
+        'Единый стандарт коммуникаци Отдельные сервисы',
+        'Легковесность реализованных Отдельные сервисы и',
+        'Возможность быстрого роста Отдельные сервисы и'
+      ]
+    },
+    {
+      name: 'advantages',
+      icon: 'icon_microscope',
+      title: 'Преимущества микросервисов',
+      list: [
+        'Отдельные сервисы и Отдельные сервисы и',
+        'Единый стандарт коммуникаци Отдельные сервисы',
+        'Легковесность реализованных Отдельные сервисы и',
+        'Возможность быстрого роста Отдельные сервисы и'
+      ]
+    }
+  ]
+
+
+
+mixin advantageGallery(data, type='advantages')
+  .advantages__gallery
+    .advantages__gallery-list
+      each item in data
+        .advantages__gallery-item
+          if type === 'advantages'
+            +icon('icon_advantage').advantages__icon.advantages__icon_check
+          else
+            +icon('icon_disadvantage').advantages__icon.advantages__icon_cross
+          p.advantages__gallery-item-text
+            != item
+
++section.advantages
+  +container
+    +slider('advantages')
+      each item in sliderData
+        +sliderSlide('advantages')
+          .advantages__head-icon-wrap
+            +icon(item.icon).advantages__head-icon
+          h3.advantages__title
+            != item.title
+          +advantageGallery(item.list, item.name)
+  +container
+    +button({fill: true, icon: {name: 'icon_create_platform', class: 'advantages__button-icon'}}).
+      Разработать платформу

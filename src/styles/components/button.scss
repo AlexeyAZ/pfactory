@@ -47,6 +47,10 @@
       color: $gray-dark;
     }
   }
+
+  &__icon {
+    margin-right: 11px;
+  }
 }
 
 button {
@@ -59,5 +63,6 @@ button {
 a {
   &.button {
     display: inline-flex;
+    align-items: center;
   }
 }

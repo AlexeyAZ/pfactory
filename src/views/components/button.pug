@@ -1,9 +1,12 @@
-mixin button(options = {tag: 'a', invert: false, fill: false})
+mixin button(options = {tag: 'a', invert: false, fill: false, icon: null })
   -
-    const {tag, invert, fill} = options;
+    const {tag, invert, fill, icon} = options;
     const buttonInvertCls = !invert ? '' : 'button_invert';
     const buttonFillCls = !fill ? '' : 'button_fill';
     const buttonTag = tag ? tag : 'a';
+    const buttonIcon = icon ? icon : null;
   #{buttonTag}.button(class=`${buttonInvertCls} ${buttonFillCls}`)&attributes(attributes)
+    if icon
+      +icon(buttonIcon.name)&attributes(buttonIcon).button__icon
     span.button__inner
       block

@@ -1,6 +1,7 @@
 const folders = {
   build: 'build',
-  src: 'src'
+  src: 'src',
+  static: 'static'
 };
 
 const localServer = {
@@ -45,6 +46,11 @@ gulp.task('browserSync', function () {
   bs.init(localServer.options);
 });
 
+
+gulp.task('static', function () {
+  return gulp.src([folders.static + '/**/*.*'])
+    .pipe(gulp.dest(folders.build));
+});
 
 gulp.task('lint', function () {
   return gulp.src([folders.src + '/scripts/**/*.js'])
@@ -161,6 +167,7 @@ gulp.task('svgSpriteBuild', function () {
 
 
 gulp.task('build', [
+  'static',
   'fonts',
   'data',
   'img',

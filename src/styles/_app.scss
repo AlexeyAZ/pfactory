@@ -55,3 +55,9 @@ body {
     }
   }
 }
+.dummy {
+  height: 500px;
+  &_hide {
+    display: none;
+  }
+}

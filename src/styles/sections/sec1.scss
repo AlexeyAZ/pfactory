@@ -72,7 +72,7 @@
 
     &_image {
       display: none;
-      @include media(w1024) {
+      @include media(w768) {
         display: block;
         position: relative;
       }
@@ -81,19 +81,14 @@
 
   &__platforms {
     padding-top: 35px;
-
-    &_mobile {
-      @include media(w1024) {
-        display: none;
-      }
+    
+    @include media(w768) {
+      justify-content: center;
+      display: flex;
     }
 
-    &_desktop {
-      position: relative;
-      display: none;
-      @include media(w1024) {
-        display: block;
-      }
+    @include media(w1024) {
+      justify-content: flex-start;
     }
 
     p {
@@ -105,19 +100,21 @@
 
   &__platforms-title {
     text-align: center;
+    margin-bottom: 30px;
 
     @include media(w768) {
       display: flex;
       align-items: center;
       text-align: left;
-      margin-bottom: 60px;
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 370px;
+      margin-bottom: 0;
+      margin-right: 20px;
+      margin-left: 20px;
     }
 
     @include media(w1024) {
       text-align: left;
+      margin-right: 40px;
+      margin-left: 0;
       max-width: none;
     }
 
@@ -125,10 +122,6 @@
       @include media(w768) {
         margin-bottom: 0;
       }
-    }
-
-    &_first {
-      transition: $trans;
     }
 
     &_second {
@@ -148,17 +141,31 @@
 
   &__platforms-icon {
     fill: $blue;
-    font-size: 4.3rem;
+    font-size: 1.8rem;
     margin-bottom: 10px;
 
     @include media(w768) {
       flex-shrink: 0;
-      margin-right: 20px;
+      margin-right: 10px;
       margin-bottom: 0;
     }
 
     @include media(w1024) {
-      font-size: 3.8rem;
+      font-size: 2.2rem;
+    }
+  }
+
+  &__platforms-text {
+    font-weight: bold;
+
+    @include media(w768) {
+      font-size: 16px;
+      line-height: 18px;
+    }
+  
+    @include media(w1366) {
+      font-size: 20px;
+      line-height: 22px;
     }
   }
 
@@ -214,7 +221,7 @@
   }
 
   &__wheel {
-    &_desktop {
+    @include media(w1024) {
       transition: $trans;
       transform: translateY(-50%);
       position: absolute;
@@ -230,7 +237,10 @@
 
   &__wheel-img {
     animation: rotate infinite 20s linear;
-    max-width: 100%;
+    max-width: 90%;
+    @include media(w1024) {
+      max-width: 100%;
+    }
   }
 
   &__wheel-text {
@@ -273,7 +283,7 @@
   &__mouse-icon {
     fill: white;
     font-size: 1.5rem;
-    margin-right: 5px;
+    margin-right: 10px;
   }
 
   &__button-wrap {
