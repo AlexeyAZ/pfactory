@@ -3,6 +3,7 @@ import MobileDetect from '../../node_modules/mobile-detect';
 
 export default class FixSection {
   constructor() {
+    this.controller = null;
     this.scene = null;
     this.dummyBlock = null;
     this.update = this.update.bind(this);
@@ -15,7 +16,7 @@ export default class FixSection {
     return this.dummyBlock;
   }
   update() {
-    this.scene.update();
+    return this.controller.update();
   }
   init() {
     const controller = new ScrollMagic.Controller();
@@ -24,13 +25,12 @@ export default class FixSection {
     const md = new MobileDetect(window.navigator.userAgent);
 
     if (!md.mobile()) {
+      this.controller = controller;
       this.scene = new ScrollMagic.Scene({
         offset
       })
         .setPin(fixSection)
         .addTo(controller);
-
-      // this.scene.on('update', e => console.log(e))
 
       this.dummyBlock = new ScrollMagic.Scene({triggerElement: '.dummy', triggerHook: 0.8})
         .setClassToggle('.advantages__slider', 'active')
