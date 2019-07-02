@@ -9,7 +9,10 @@ $sec2SlideInnerX_Offsets: 10px;
   }
 
   &__container {
-    flex: 1;
+    @include media(w1024) {
+      flex: 1;
+      width: 100%;
+    }
   }
 
   &__title {
