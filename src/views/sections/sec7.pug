@@ -6,7 +6,8 @@
       techno: 'Java Play, Java Spring, React JS, Kafka, Postgres',
       hours: '20 000',
       src: 'ds.png',
-      alt: 'Деловая среда'
+      alt: 'Деловая среда',
+      href: 'https://dasreda.ru/'
     },
     {
       title: 'СберКредо',
@@ -15,6 +16,7 @@
       hours: '12 000',
       src: 'sk.png',
       alt: 'СберКредо',
+      href: 'https://sberkredo.ru/',
       class: 'sk'
     },
     {
@@ -23,7 +25,8 @@
       techno: 'Ruby on rails, React JS, Postgres ',
       hours: '8 000',
       src: 'cpa.png',
-      alt: 'Партнерская программа CPA'
+      alt: 'Партнерская программа CPA',
+      href: 'https://partners.dasreda.ru/'
     },
     {
       title: 'Legal Cycle',
@@ -31,7 +34,8 @@
       techno: 'Java card JCOP, Java, Ethereum solidity, React JS, Postgres',
       hours: '3 400',
       src: 'legalcycle.png',
-      alt: 'Legal Cycle'
+      alt: 'Legal Cycle',
+      href: 'www.legalcycle.org'
     },
     {
       title: 'Мобильный репортер ПГК',
@@ -40,6 +44,7 @@
       hours: '1 500',
       src: 'pgk.png',
       alt: 'ПГК',
+      href: 'http://www.pgkweb.ru/'
     }
   ]
 
@@ -57,7 +62,7 @@
       each item in sec7Data
         +sliderSlide('sec7')
           .sec7__slider-slide-inner
-            .sec7__slider-slide-block.sec7__slider-slide-block_image
+            a(href=item.href target="_blank").sec7__slider-slide-block.sec7__slider-slide-block_image
               img(src=`img/${item.src}` alt=item.alt class=item.class ? `sec7__slider-image_${item.class}` : '').sec7__slider-image
             .sec7__slider-slide-block
               .sec7__slider-slide-description
