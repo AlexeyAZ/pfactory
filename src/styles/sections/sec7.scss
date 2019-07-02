@@ -11,7 +11,7 @@
 
   @include media(w1024) {
     padding-top: 90px;
-    padding-bottom: 85px;
+    padding-bottom: 48px;
   }
 
   &__head {
@@ -23,7 +23,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 130px;
+      margin-bottom: 30px;
     }
   }
 
@@ -75,16 +75,10 @@
     max-width: 100%;
     max-height: 100%;
 
-    &_dbi {
-      height: 80px;
-    }
-
-    &_ylab {
-      height: 80px;
-    }
-
-    &_rt {
-      height: 100px;
+    &_sk {
+      @include mediaDown(w768) {
+        max-width: 90%;
+      }
     }
   }
 

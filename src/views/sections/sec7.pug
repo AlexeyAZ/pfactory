@@ -1,39 +1,49 @@
 -
   const sec7Data = [
     {
-      src: 'sber.png',
-      alt: 'Сбербанк'
-    },
-    {
+      title: 'Платформа Деловая среда',
+      text: 'Система онлайн-образования — курсы, видео уроки, тесты и опросы, вебинары, сообщества, новости и блоги.',
+      techno: 'Java Play, Java Spring, React JS, Kafka, Postgres',
+      hours: '20 000',
       src: 'ds.png',
       alt: 'Деловая среда'
     },
     {
-      src: 'kredo.svg',
-      alt: 'Кредо'
+      title: 'СберКредо',
+      text: 'Инвестиционная платформа, которая предоставляет возможность компаниям малого и микробизнеса получить финансирование от физических лиц и институциональных инвесторов.',
+      techno: 'Java Play, AKKA, Java Spring, React JS, React Native, Kafka, Postgres, Docker, Kubernetes',
+      hours: '12 000',
+      src: 'sk.png',
+      alt: 'СберКредо',
+      class: 'sk'
     },
     {
-      src: 'agima.png',
-      alt: 'Agima'
+      title: 'Партнерская программа CPA',
+      text: 'Реализация банковских продуктов для малого и среднего бизнеса через партнерскую сеть. Платформа-аггрегатор работы сотен продающих компаний, банковские сервисы на всей территории РФ.',
+      techno: 'Ruby on rails, React JS, Postgres ',
+      hours: '8 000',
+      src: 'cpa.png',
+      alt: 'Партнерская программа CPA'
     },
     {
-      src: 'dbi.svg',
-      alt: 'DBI',
-      class: 'dbi'
+      title: 'Legal Cycle',
+      text: 'Блокчейн-платформа для защиты от контрафактной продукции. Аутентичность продуктов защищена микрочипом Java Card и связанным смарт-контрактом в сети блокчейн.',
+      techno: 'Java card JCOP, Java, Ethereum solidity, React JS, Postgres',
+      hours: '3 400',
+      src: 'legalcycle.png',
+      alt: 'Legal Cycle'
     },
     {
-      src: 'ylab.svg',
-      alt: 'YLAB',
-      class: 'ylab'
-    },
-    {
-      src: 'rt.png',
-      alt: 'Ростелеком',
-      class: 'rt'
+      title: 'Мобильный репортер ПГК',
+      text: 'Приложение и набор сервисов для оценки состояния вагонов при приеме их клиентом. Платформа агрегирует данные событий дислокации вагонов и ищет замену в режиме реального времени. Прогнозирование времени эксплуатации вагонов на основе полученных данных из мобильного приложения.',
+      techno: 'Java Play, AKKA, ReactJS, Postgres, Cloudera, Redis',
+      hours: '1 500',
+      src: 'pgk.png',
+      alt: 'ПГК',
     }
   ]
 
-+section.sec7.bg-white
++section(id=menu[3].href).sec7.bg-white
   +container
     .sec7__head
       h3.sec7__title.
@@ -51,19 +61,19 @@
               img(src=`img/${item.src}` alt=item.alt class=item.class ? `sec7__slider-image_${item.class}` : '').sec7__slider-image
             .sec7__slider-slide-block
               .sec7__slider-slide-description
-                p.text-m.fw-bold.sec7__slider-slide-title.
-                  Платформа Деловая среда
-                p.
-                  Система онлайн-образования — курсы, видео уроки, тесты и опросы, вебинары, сообщества, новости и блоги.
+                p.text-m.fw-bold.sec7__slider-slide-title
+                  != item.title
+                p
+                  != item.text
                 p.sec7__slider-slide-technologies
                   strong.
                     Технологии: 
                   |
                   |
-                  |Java Play, Java Spring, React JS, Kafka, Postgres
+                  != item.techno
                 span
                   strong.
                     Количество часов: 
                   |
                   |
-                  |20 000
+                  != item.hours

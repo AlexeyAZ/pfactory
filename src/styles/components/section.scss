@@ -6,5 +6,13 @@
   @include media(w1024) {
     padding-top: 90px;
     padding-bottom: 60px;
+    height: 100vh;
+    max-height: 620px;
+    &.sec1,
+    &.sec8,
+    &.sec9 {
+      height: auto;
+      max-height: none;
+    }
   }
 }
