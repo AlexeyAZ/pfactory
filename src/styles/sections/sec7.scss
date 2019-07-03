@@ -129,7 +129,7 @@
     display: inline-flex;
     align-items: center;
     &:hover {
-      color: lighten($blue, 10);
+      color: $gray-darkest;
     }
     @include media(w1366) {
       font-size: 20px;
@@ -142,9 +142,5 @@
     @include media(w1366) {
       font-size: 1.9rem;
     }
-  }
-
-  &__save-presentation-link-text {
-
   }
 }

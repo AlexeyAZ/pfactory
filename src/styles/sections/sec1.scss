@@ -99,12 +99,13 @@
   }
 
   &__platforms-title {
-    text-align: center;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
     margin-bottom: 30px;
 
     @include media(w768) {
-      display: flex;
-      align-items: center;
+      flex-flow: row;
       text-align: left;
       margin-bottom: 0;
       margin-right: 20px;

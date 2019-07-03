@@ -34,6 +34,10 @@
     background-color: $blue;
     border-color: $blue;
     color: white;
+    &:hover {
+      border-color: $gray-darkest;
+      background-color: $gray-darkest;
+    }
   }
 
   &[disabled] {

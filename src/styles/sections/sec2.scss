@@ -1,6 +1,7 @@
 @import '../../../node_modules/swiper/dist/css/swiper.min.css';
 
 $sec2SlideInnerX_Offsets: 10px;
+$sec2-slider-content-img-height-mobile: 102px;
 
 .sec2 {
   @include media(w1024) {
@@ -9,9 +10,11 @@ $sec2SlideInnerX_Offsets: 10px;
   }
 
   &__title {
+    text-align: center;
     margin-bottom: 35px;
 
     @include media(w1024) {
+      text-align: left;
       padding-bottom: 30px;
     }
   }
@@ -78,6 +81,12 @@ $sec2SlideInnerX_Offsets: 10px;
     }
   }
 
+  &__slider-content-img {
+    @include mediaDown(w768) {
+      height: $sec2-slider-content-img-height-mobile;
+    }
+  }
+
   &__slider-title {
     font-size: 16px;
     font-weight: 500;
@@ -96,9 +105,12 @@ $sec2SlideInnerX_Offsets: 10px;
       display: none;
     }
   }
-  
+
   &__slider-arrow {
     &.slider-arrow {
+      @include mediaDown(w768) {
+        top: calc(#{$sec2-slider-content-img-height-mobile} / 2);
+      }
       @include media(w768) {
         display: none;
       }

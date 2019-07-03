@@ -15,7 +15,7 @@ mixin header()
           img(src="./img/logo.svg").header__logo-icon
           img(src="./img/logo_invert.svg").header__logo-icon.header__logo-icon_invert
         .header__menu
-          each item in menu
+          each item in menu.slice(0, 5)
             .header__menu-item
               a(href=`#${item.href}`).header__menu-link
                 != item.text
