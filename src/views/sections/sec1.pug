@@ -5,12 +5,14 @@ include ../components/header.pug
     {
       icon: 'icon_create_platform',
       text: 'Создание платформ',
-      image: 'wheel'
+      image: 'wheel',
+      href: menu[5].href,
     },
     {
       icon: 'icon_buy_people',
       text: 'Продажа людей',
-      image: 'sheme'
+      image: 'sheme',
+      href: menu[6].href,
     }
   ];
 
@@ -45,7 +47,7 @@ mixin sheme(cls)
           each item in sec1Data
             .sec1__platforms-title
               +icon(item.icon).sec1__platforms-icon
-              p.sec1__platforms-text
+              a(href=`#${item.href}`).sec1__platforms-link
                 != item.text
         
         //- .sec1__platforms.sec1__platforms_mobile

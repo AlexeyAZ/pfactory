@@ -19,7 +19,7 @@
     @include media(w1024) {
       margin-bottom: 0.8em;
     }
-    @include media(w1366) {
+    @include media(w1024) {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -29,7 +29,7 @@
 
   &__title {
     margin-bottom: 0.8em;
-    @include media(w1366) {
+    @include media(w1024) {
       margin-bottom: 0;
     }
   }
@@ -124,17 +124,24 @@
   }
 
   &__save-presentation-link {
+    transition: $trans;
     font-weight: bold;
     display: inline-flex;
     align-items: center;
-    @include media(w768) {
+    &:hover {
+      color: lighten($blue, 10);
+    }
+    @include media(w1366) {
       font-size: 20px;
     }
   }
 
   &__save-presentation-icon {
-    font-size: 1.9rem;
+    font-size: 1.32rem;
     margin-right: 10px;
+    @include media(w1366) {
+      font-size: 1.9rem;
+    }
   }
 
   &__save-presentation-link-text {

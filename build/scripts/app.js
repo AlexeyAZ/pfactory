@@ -4851,10 +4851,6 @@ var _Form2 = _interopRequireDefault(_Form);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-// import Intro from './intro';
-
-// import shemeParallax from './ShemeParallax';
-
 
 var app = {
   load: function load() {
@@ -4864,17 +4860,11 @@ var app = {
   bindEvents: function bindEvents() {
     (0, _svg4everybody2.default)();
     var md = new _mobileDetect2.default(window.navigator.userAgent);
-    // const introHandlers = new Intro();
-    // introHandlers.init();
 
     // eslint-disable-next-line no-unused-vars
     var scroll = new _smoothScroll2.default('a[href*="#"]', {
       header: '.header'
     });
-    // event from SmoothScroll
-    // document.addEventListener('scrollStart', () => {
-    //   introHandlers.toggleLock('disable');
-    // });
 
     var formPopup = new _Popup2.default('.js-form-popup');
     formPopup.init();
@@ -4929,15 +4919,11 @@ var app = {
     var sec1Slider = new _slider2.default();
     sec1Slider.createSlider('.sec1__slider', {});
 
-    if (!md.mobile()) {
-      // shemeParallax(100, 50);
-    }
-
     var sec2Slider = new _slider2.default();
     sec2Slider.createSlider('.sec2__slider', {
-      mousewheel: true,
-      releaseOnEdges: true,
-      // centeredSlides: true,
+      mousewheel: {
+        releaseOnEdges: true
+      },
       breakpoints: {
         768: {
           slidesPerView: 2
@@ -4947,44 +4933,6 @@ var app = {
         }
       }
     });
-
-    // const advantagesSliderWrap = document.querySelector('.advantages__slider ');
-    // window.addEventListener('mousewheel', e => {
-    //   const slider = advantagesSlider.getSlider();
-    //   const direction = e.deltaY > 0 ? 'DOWN' : 'UP';
-    //   if (slider.activeIndex === 1 && direction === 'DOWN') {
-    //     slider.mousewheel.disable();
-    //   }
-    //   if (slider.activeIndex === 1 && direction === 'UP' && !slider.mousewheel.enabled) {
-    //     slider.mousewheel.enable();
-    //   }
-    //   if (slider.activeIndex === 0 && direction === 'UP') {
-    //     slider.mousewheel.disable();
-    //   }
-    //   if (slider.activeIndex === 0 && direction === 'DOWN' && !slider.mousewheel.enabled) {
-    //     slider.mousewheel.enable();
-    //   }
-    // })
-
-    // window.addEventListener('mousewheel', e => console.log(e))
-
-    // window.addEventListener('scroll', () => {
-    //   const slider = advantagesSlider.getSlider();
-    //   const scene = fixSectionHandler.getScene();
-    //   console.log(scene.progress())
-    //   if (scene.progress() === 0 && !slider.mousewheel.enabled) {
-    //     slider.mousewheel.enable();
-    //   }
-    // });
-
-    // advantagesSlider.getSlider().on('slideNextTransitionEnd', () => {
-    //   const slider = advantagesSlider.getSlider();
-    //   const scene = fixSectionHandler.getScene();
-    //   if (slider.activeIndex === 1) {
-    //     slider.mousewheel.disable();
-    //     scene.enabled(true);
-    //   }
-    // });
 
     var sec4Slider = new _slider2.default();
     sec4Slider.createSlider('.sec4__slider', {
@@ -4997,7 +4945,6 @@ var app = {
 
     var sec5Slider = new _slider2.default();
     sec5Slider.createSlider('.sec5__slider', {
-      spaceBetween: 20,
       breakpoints: {
         1024: {
           slidesPerView: 3
@@ -5021,8 +4968,9 @@ var app = {
     var sec6SliderDesktop = new _slider2.default();
     sec6SliderDesktop.createSlider('.sec6__slider_desktop', {
       spaceBetween: 20,
-      mousewheel: true,
-      releaseOnEdges: true,
+      mousewheel: {
+        releaseOnEdges: true
+      },
       breakpoints: {
         1024: {
           slidesPerView: 'auto'
@@ -5033,25 +4981,8 @@ var app = {
     var sec7Slider = new _slider2.default();
     sec7Slider.createSlider('.sec7__slider', {
       slidesPerView: 1,
-      // speed: 5000,
       spaceBetween: 20,
-      // freeMode: true,
-      // freeModeMomentumRatio: 0.5,
-      // freeModeMomentumVelocityRatio: 0.5,
-      // freeModeMomentumBounceRatio: 1,
-      // autoplay: {
-      //   delay: 0,
-      //   disableOnInteraction: false
-      // },
-      loop: true,
-      breakpoints: {
-        1024: {
-          // slidesPerView: 4
-        },
-        1366: {
-          // slidesPerView: 5
-        }
-      }
+      loop: true
     });
 
     var sec8Slider = new _slider2.default();
@@ -19026,6 +18957,7 @@ function scroll(...args) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+var key = 'AIzaSyDmVxAjUIL1ksH85v5O9sgmZCesKI51m5M';
 function initMap(_map, coords, adress) {
   // eslint-disable-next-line no-undef
   var map = new google.maps.Map(_map, {
@@ -19063,7 +18995,7 @@ function loadMapScript(src, callback) {
 }
 
 function makeMap(elements) {
-  loadMapScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyBDOFw2eyQDS_kF3Ng1uAHlSTUXluG7nwE', function () {
+  loadMapScript('https://maps.googleapis.com/maps/api/js?key=' + key, function () {
     return siteMaps(elements);
   });
 }

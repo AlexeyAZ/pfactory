@@ -9,7 +9,7 @@
   min-height: 100vh;
 
   @include media(w768) {
-    padding-top: 190px;
+    padding-top: 60px;
   }
 
   @include media(w1024) {
@@ -155,8 +155,14 @@
     }
   }
 
-  &__platforms-text {
+  &__platforms-link {
+    transition: $trans;
+    color: white;
     font-weight: bold;
+
+    &:hover {
+      color: $blue;
+    }
 
     @include media(w768) {
       font-size: 16px;

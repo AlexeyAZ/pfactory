@@ -51,6 +51,11 @@
       fill: $green;
     }
     @include media(w1024) {
+      font-size: 5.9rem;
+      margin-bottom: 20px;
+      margin-right: 0;
+    }
+    @include media(w1366) {
       font-size: 7.9rem;
       margin-bottom: 25px;
     }

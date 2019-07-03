@@ -32,6 +32,11 @@ h3 {
   }
 
   @include media(w1024) {
+    font-size: 30px;
+    line-height: 37px;
+  }
+
+  @include media(w1366) {
     font-size: 36px;
     line-height: 44px;
   }

@@ -1,3 +1,4 @@
+const key = 'AIzaSyDmVxAjUIL1ksH85v5O9sgmZCesKI51m5M';
 function initMap(_map, coords, adress) {
   // eslint-disable-next-line no-undef
   const map = new google.maps.Map(_map, {
@@ -35,7 +36,7 @@ function loadMapScript(src, callback) {
 }
 
 function makeMap(elements) {
-  loadMapScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyBDOFw2eyQDS_kF3Ng1uAHlSTUXluG7nwE', () => siteMaps(elements));
+  loadMapScript(`https://maps.googleapis.com/maps/api/js?key=${key}`, () => siteMaps(elements));
 }
 
 export default makeMap;

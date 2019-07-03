@@ -25,8 +25,8 @@
 
   &__slider {
     @include media(w768) {
-      padding-left: 40px;
-      padding-right: 40px;
+      padding-left: 30px;
+      padding-right: 30px;
     }
   }
 
@@ -124,6 +124,7 @@
 
   &__slide-button {
     margin-top: 26px;
+    white-space: nowrap;
   }
 
   &__slide-button-icon {

@@ -5,6 +5,7 @@
   background-position: center;
   padding-top: 50px;
   padding-bottom: 0;
+  overflow: hidden;
 
   @include media(w768) {
     padding-top: 70px;

@@ -5,9 +5,7 @@ import MobileDetect from '../../node_modules/mobile-detect';
 
 import Slider from './slider';
 import makeMap from './map';
-// import Intro from './intro';
 import Header from './Header';
-// import shemeParallax from './ShemeParallax';
 import FixSection from './FixSection';
 import Popup from './Popup';
 import Form from './Form';
@@ -20,17 +18,11 @@ const app = {
   bindEvents: () => {
     svg4everybody();
     const md = new MobileDetect(window.navigator.userAgent);
-    // const introHandlers = new Intro();
-    // introHandlers.init();
 
     // eslint-disable-next-line no-unused-vars
     const scroll = new SmoothScroll('a[href*="#"]', {
       header: '.header'
     });
-    // event from SmoothScroll
-    // document.addEventListener('scrollStart', () => {
-    //   introHandlers.toggleLock('disable');
-    // });
 
     const formPopup = new Popup('.js-form-popup');
     formPopup.init();
@@ -83,15 +75,11 @@ const app = {
     const sec1Slider = new Slider();
     sec1Slider.createSlider('.sec1__slider', {});
 
-    if (!md.mobile()) {
-      // shemeParallax(100, 50);
-    }
-
     const sec2Slider = new Slider();
     sec2Slider.createSlider('.sec2__slider', {
-      mousewheel: true,
-      releaseOnEdges: true,
-      // centeredSlides: true,
+      mousewheel: {
+        releaseOnEdges: true
+      },
       breakpoints: {
         768: {
           slidesPerView: 2
@@ -101,44 +89,6 @@ const app = {
         }
       }
     });
-
-    // const advantagesSliderWrap = document.querySelector('.advantages__slider ');
-    // window.addEventListener('mousewheel', e => {
-    //   const slider = advantagesSlider.getSlider();
-    //   const direction = e.deltaY > 0 ? 'DOWN' : 'UP';
-    //   if (slider.activeIndex === 1 && direction === 'DOWN') {
-    //     slider.mousewheel.disable();
-    //   }
-    //   if (slider.activeIndex === 1 && direction === 'UP' && !slider.mousewheel.enabled) {
-    //     slider.mousewheel.enable();
-    //   }
-    //   if (slider.activeIndex === 0 && direction === 'UP') {
-    //     slider.mousewheel.disable();
-    //   }
-    //   if (slider.activeIndex === 0 && direction === 'DOWN' && !slider.mousewheel.enabled) {
-    //     slider.mousewheel.enable();
-    //   }
-    // })
-
-    // window.addEventListener('mousewheel', e => console.log(e))
-
-    // window.addEventListener('scroll', () => {
-    //   const slider = advantagesSlider.getSlider();
-    //   const scene = fixSectionHandler.getScene();
-    //   console.log(scene.progress())
-    //   if (scene.progress() === 0 && !slider.mousewheel.enabled) {
-    //     slider.mousewheel.enable();
-    //   }
-    // });
-
-    // advantagesSlider.getSlider().on('slideNextTransitionEnd', () => {
-    //   const slider = advantagesSlider.getSlider();
-    //   const scene = fixSectionHandler.getScene();
-    //   if (slider.activeIndex === 1) {
-    //     slider.mousewheel.disable();
-    //     scene.enabled(true);
-    //   }
-    // });
 
     const sec4Slider = new Slider();
     sec4Slider.createSlider('.sec4__slider', {
@@ -151,7 +101,6 @@ const app = {
 
     const sec5Slider = new Slider();
     sec5Slider.createSlider('.sec5__slider', {
-      spaceBetween: 20,
       breakpoints: {
         1024: {
           slidesPerView: 3
@@ -175,8 +124,9 @@ const app = {
     const sec6SliderDesktop = new Slider();
     sec6SliderDesktop.createSlider('.sec6__slider_desktop', {
       spaceBetween: 20,
-      mousewheel: true,
-      releaseOnEdges: true,
+      mousewheel: {
+        releaseOnEdges: true
+      },
       breakpoints: {
         1024: {
           slidesPerView: 'auto'
@@ -187,25 +137,8 @@ const app = {
     const sec7Slider = new Slider();
     sec7Slider.createSlider('.sec7__slider', {
       slidesPerView: 1,
-      // speed: 5000,
       spaceBetween: 20,
-      // freeMode: true,
-      // freeModeMomentumRatio: 0.5,
-      // freeModeMomentumVelocityRatio: 0.5,
-      // freeModeMomentumBounceRatio: 1,
-      // autoplay: {
-      //   delay: 0,
-      //   disableOnInteraction: false
-      // },
-      loop: true,
-      breakpoints: {
-        1024: {
-          // slidesPerView: 4
-        },
-        1366: {
-          // slidesPerView: 5
-        }
-      }
+      loop: true
     });
 
     const sec8Slider = new Slider();

@@ -1,5 +1,6 @@
-mixin simple-list(data)
+mixin simple-list(data, itemClass)
   ul.simple-list&attributes(attributes)
     each item in data
       li.simple-list__item
-        != item
+        p(class=itemClass)
+          != item
