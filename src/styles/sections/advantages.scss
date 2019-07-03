@@ -4,6 +4,10 @@
   $head-icon-wrap-height-desktop: 80px;
   text-align: center;
 
+  @include media(w1024) {
+    padding-top: 46px;
+  }
+
   &__head-icon-wrap {
     display: flex;
     align-items: center;
@@ -51,7 +55,7 @@
       fill: $green;
     }
     @include media(w1024) {
-      font-size: 5.9rem;
+      font-size: 5.6rem;
       margin-bottom: 20px;
       margin-right: 0;
     }
