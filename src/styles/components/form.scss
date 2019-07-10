@@ -1,0 +1,15 @@
+.form {
+  &__message {
+    display: none;
+    margin-bottom: 0;
+    &_success {
+      color: $green;
+    }
+    &_error {
+      color: $red;
+    }
+    &_show {
+      display: block;
+    }
+  }
+}

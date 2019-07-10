@@ -2,6 +2,7 @@ import '../../node_modules/babel-polyfill';
 import SmoothScroll from 'smooth-scroll';
 import svg4everybody from 'svg4everybody';
 import MobileDetect from '../../node_modules/mobile-detect';
+import axios from 'axios';
 
 import Slider from './slider';
 import makeMap from './map';
@@ -148,11 +149,35 @@ const app = {
       autoHeight: true
     });
 
-    const sec9FormHandlers = new Form('.sec9__form');
-    sec9FormHandlers.init();
+    const sec9Form = new Form('.sec9__form');
+    sec9Form.init();
+    sec9Form.handleSubmit(() => {
+      axios({
+        method: 'post',
+        url: 'https://pfactory.ru/send_mail',
+        data: sec9Form.getFormData()
+      })
+        .then(response => {
+          sec9Form.resetForm();
+          sec9Form.showMessage('success');
+        })
+        .catch(response => console.log(response));
+    });
 
-    const popupFormHandlers = new Form('.index__form');
-    popupFormHandlers.init();
+    const popupForm = new Form('.index__form');
+    popupForm.init();
+    popupForm.handleSubmit(() => {
+      axios({
+        method: 'post',
+        url: 'https://pfactory.ru/send_mail',
+        data: popupForm.getFormData()
+      })
+        .then(response => {
+          popupForm.resetForm();
+          popupForm.showMessage('success');
+        })
+        .catch(response => console.log(response));
+    });
   }
 };
 

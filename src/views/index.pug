@@ -9,6 +9,7 @@ include ./components/icon.pug
 include ./components/slider.pug
 include ./components/popup.pug
 include ./components/simple-list.pug
+include ./components/form.pug
 
 block content
   include ./svg/svg.pug
@@ -17,17 +18,20 @@ block content
       Заявка на разработку
     p.
       Вы можете написать нам сообщение, и мы свяжемся с вами в течение часа.
+
     form.index__form
       .index__form-fields
         .index__form-fields-item.index__form-inputs
-          +input(placeholder="Ваше имя" required)
-          +input(placeholder="Ваш e-mail" required)
-          +input(placeholder="Ваш телефон" required)
+          +input(placeholder="Ваше имя" required name="name")
+          +input(placeholder="Ваш e-mail" required name="email" type="email")
+          +input(placeholder="Ваш телефон" required name="phone" type="tel")
         .index__form-fields-item
-          +input('textarea')(placeholder="Сообщение" rows="8").index__form-textarea
+          +input('textarea')(placeholder="Сообщение" rows="8" name="comment").index__form-textarea
       .index__form-button-wrap
-        +button({tag: 'button', invert: true}).
+        +button({tag: 'button', invert: true})(type="submit").index__form-button.
           Отправить заявку
+        +formMessages
+
   +header.main-header
   .fix-section
     include ./sections/sec1.pug

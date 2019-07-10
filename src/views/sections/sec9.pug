@@ -66,12 +66,13 @@ mixin sec9Contact(item)
         form.sec9__form
           .sec9__form-fields
             .sec9__form-fields-item.sec9__form-inputs
-              +input(placeholder="Ваше имя", required)
-              +input(placeholder="Ваш e-mail", required)
-              +input(placeholder="Ваш телефон", required)
+              +input(placeholder="Ваше имя", required, name="name")
+              +input(placeholder="Ваш e-mail", required, name="email" type="email")
+              +input(placeholder="Ваш телефон", required, name="phone" type="tel")
             .sec9__form-fields-item
-              +input('textarea')(placeholder="Сообщение" rows="8").sec9__form-textarea
+              +input('textarea')(placeholder="Сообщение", rows="8", name="comment").sec9__form-textarea
           .sec9__button-wrap
-            +button({tag: 'button', invert: true}).
+            +button({tag: 'button', invert: true})(type="submit").sec9__button.
               Отправить заявку
+            +formMessages
       +footer

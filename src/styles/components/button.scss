@@ -52,6 +52,18 @@
     }
   }
 
+  &_disabled {
+    background-color: $gray-lighten;
+    border-color: $gray-lighten;
+    color: $gray-dark;
+
+    &:hover {
+      background-color: $gray-lighten;
+      border-color: $gray-lighten;
+      color: $gray-dark;
+    }
+  }
+
   &__icon {
     margin-right: 11px;
   }

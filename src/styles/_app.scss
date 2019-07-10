@@ -55,6 +55,19 @@ body {
       width: 49%;
     }
   }
+  &__form-button-wrap {
+    @include media(w768) {
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__form-button {
+    margin-bottom: 10px;
+    @include media(w768) {
+      margin-right: 20px;
+      margin-bottom: 0;
+    }
+  }
 }
 .dummy {
   height: 500px;

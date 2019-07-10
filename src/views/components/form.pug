@@ -1,0 +1,8 @@
+mixin formMessages(data = {error: 'Необходимо заполнить обязательные поля', success: 'Спасибо, ваше сообщение отправлено!'})
+  -
+    const { error, success } = data
+  .form__messages
+    p.form__message.form__message_success.js-message-success
+      != success
+    p.form__message.form__message_error.js-message-error
+      != error

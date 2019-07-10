@@ -142,8 +142,22 @@
       padding-top: 10px;
     }
 
+    @include media(w768) {
+      display: flex;
+      align-items: center;
+    }
+
     @include media(w1024) {
       margin-bottom: 53px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 15px;
+    white-space: nowrap;
+    @include media(w768) {
+      margin-bottom: 0;
+      margin-right: 20px;
     }
   }
 

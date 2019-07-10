@@ -1,3 +1,21 @@
+-
+  const aboutData = [
+    {
+      name: 'Евгений Агафонов',
+      position: 'CEO',
+      about: '10 лет в управлении IT компаний. Десятки завершенных проектов и созданных команд.',
+      src: 'img/Evgenii.jpg',
+      srcset: 'img/Evgenii@2x.jpg 2x'
+    },
+    {
+      name: 'Михаил Сарычев',
+      position: 'CIO',
+      about: '18 лет в IT. Лидер разработки и активный член Opensource сообщества России.',
+      src: 'img/Michail.jpg',
+      srcset: 'img/Michail@2x.jpg 2x'
+    }
+  ]
+
 mixin sec6Slide(cls)
   +sliderSlide('sec6')(class=cls)
     .sec6__slider-slide-inner&attributes(attributes)
@@ -27,30 +45,21 @@ mixin sec6Slider(_mobile)
     if !_mobile
       +sec6Slide('sec6__slider-slide_main')
         +about.sec6__about_desktop
-    +sec6Slide.sec6__slider-slide-photo
-      .sec6__frame
-        img(src="img/Evgenii.jpg").sec6__photo
-      .sec6__slider-slide-info
-        p.text-m.sec6__slider-name
-          strong.
-            Евгений Агафонов
-        p
-          em.
-            CEO
-        p.
-          10 лет в управлении IT компаний. Десятки завершенных проектов и созданных команд.
-    +sec6Slide.sec6__slider-slide-photo
-      .sec6__frame
-        img(src="img/Vladimir.jpg").sec6__photo
-      .sec6__slider-slide-info
-        p.text-m.sec6__slider-name
-          strong.
-            Владимир Труфанов
-        p
-          em.
-            CIO
-        p.
-          18 лет в IT. Лидер разработки и активный член Opensource сообщества России.
+    each item in aboutData
+      -
+        const { name, position, about, src, srcset } = item
+      +sec6Slide.sec6__slider-slide-photo
+        .sec6__frame
+          img(src=src srcset=srcset).sec6__photo
+        .sec6__slider-slide-info
+          p.text-m.sec6__slider-name
+            strong
+              !=name
+          p
+            em
+              !=position
+          p
+            !=about
     +sec6Slide.sec6__people-wrap
       .sec6__frame
         +people

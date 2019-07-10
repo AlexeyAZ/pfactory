@@ -11,7 +11,7 @@ const localServer = {
     },
     open: true,
     notify: false,
-    https: true
+    // https: true
   }
 };
 
