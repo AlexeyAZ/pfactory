@@ -5711,6 +5711,7 @@ var app = {
     var md = new _mobileDetect2.default(window.navigator.userAgent);
     // eslint-disable-next-line no-unused-vars
     var getScrollSettings = window.matchMedia('(max-width: 768px)').matches ? {} : { header: '.header' };
+    // eslint-disable-next-line no-unused-vars
     var scroll = new _smoothScroll2.default('a[href*="#"]', getScrollSettings);
 
     var formPopup = new _Popup2.default('.js-form-popup');
@@ -5839,35 +5840,33 @@ var app = {
       autoHeight: true
     });
 
-    var sec9Form = new _Form2.default('.sec9__form');
-    sec9Form.init();
-    sec9Form.handleSubmit(function () {
+    var sec9Form = new _Form2.default('.sec9__form', function () {
       (0, _axios2.default)({
         method: 'post',
         url: 'https://pfactory.ru/send_mail',
         data: sec9Form.getFormData()
-      }).then(function (response) {
+      }).then(function () {
         sec9Form.resetForm();
         sec9Form.showMessage('success');
-      }).catch(function (response) {
-        return console.log(response);
+      }).catch(function (error) {
+        return console.log(error);
       });
     });
+    sec9Form.init();
 
-    var popupForm = new _Form2.default('.index__form');
-    popupForm.init();
-    popupForm.handleSubmit(function () {
+    var popupForm = new _Form2.default('.index__form', function () {
       (0, _axios2.default)({
         method: 'post',
         url: 'https://pfactory.ru/send_mail',
         data: popupForm.getFormData()
-      }).then(function (response) {
+      }).then(function () {
         popupForm.resetForm();
         popupForm.showMessage('success');
-      }).catch(function (response) {
-        return console.log(response);
+      }).catch(function (error) {
+        return console.log(error);
       });
     });
+    popupForm.init();
   }
 };
 
@@ -20891,6 +20890,7 @@ var Header = function () {
   }, {
     key: 'init',
     value: function init() {
+      this.setState();
       window.addEventListener('scroll', this.setState);
     }
   }]);
@@ -23864,7 +23864,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Form = function () {
-  function Form(form) {
+  function Form(form, onSubmit) {
     _classCallCheck(this, Form);
 
     this.form = document.querySelector(form);
@@ -23876,7 +23876,7 @@ var Form = function () {
     this.successMessageClass = 'js-message-success';
     this.messageClass = 'form__message';
     this.messageShowClass = 'form__message_show';
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.onSubmit = onSubmit;
   }
 
   _createClass(Form, [{
@@ -24023,42 +24023,33 @@ var Form = function () {
       this.validateForm();
     }
   }, {
-    key: 'handleSubmit',
-    value: function handleSubmit(onSubmit) {
-      var _this5 = this;
-
-      this.form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        if (_this5.isValid()) {
-          return onSubmit();
-        }
-      });
-    }
-  }, {
     key: 'init',
     value: function init() {
-      var _this6 = this;
+      var _this5 = this;
 
       var fields = this.form.querySelectorAll('.input__field[required]');
       this.button = this.form.querySelector('.button');
+
       this.makePhoneMask();
 
-      this.button.addEventListener('click', function () {
-        _this6.validateFields();
-        if (!_this6.isValid()) {
-          _this6.showMessage('error');
+      this.button.addEventListener('click', function (e) {
+        e.preventDefault();
+        _this5.validateFields();
+        if (!_this5.isValid()) {
+          return _this5.showMessage('error');
         }
+        return _this5.onSubmit();
       });
 
       this.setButtonState();
 
       [].concat(_toConsumableArray(fields)).forEach(function (input) {
         input.addEventListener('input', function () {
-          _this6.validateField(input);
-          _this6.showMessage('clear');
+          _this5.validateField(input);
+          _this5.showMessage('clear');
         });
         input.addEventListener('blur', function () {
-          _this6.validateField(input);
+          _this5.validateField(input);
         });
       });
     }

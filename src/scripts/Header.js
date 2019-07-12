@@ -14,6 +14,7 @@ export default class Header {
   }
 
   init() {
+    this.setState();
     window.addEventListener('scroll', this.setState);
   }
 }

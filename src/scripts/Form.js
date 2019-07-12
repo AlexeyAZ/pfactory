@@ -2,7 +2,7 @@ import imask from 'imask';
 import rules from '../config/rules';
 
 export default class Form {
-  constructor(form) {
+  constructor(form, onSubmit) {
     this.form = document.querySelector(form);
     this.valid = false;
     this.button = null;
@@ -12,8 +12,7 @@ export default class Form {
     this.successMessageClass = 'js-message-success';
     this.messageClass = 'form__message';
     this.messageShowClass = 'form__message_show';
-    this.handleSubmit = this.handleSubmit.bind(this);
-
+    this.onSubmit = onSubmit;
   }
 
   isValid() {
@@ -34,7 +33,7 @@ export default class Form {
   makePhoneMask() {
     const phoneFields = this.form.querySelectorAll('.input__field[name="phone"]');
     phoneFields.forEach(field => {
-      const mask = imask(field, {mask: '+{0} (000) 000-00-00' });
+      const mask = imask(field, {mask: '+{0} (000) 000-00-00'});
       field.addEventListener('blur', () => {
         mask.updateOptions({lazy: true});
         if (mask.unmaskedValue.length !== 11) {
@@ -139,25 +138,19 @@ export default class Form {
   }
 
 
-  handleSubmit(onSubmit) {
-    this.form.addEventListener('submit', e => {
-      e.preventDefault();
-      if (this.isValid()) {
-        return onSubmit();
-      }
-    });
-  }
-
   init() {
     const fields = this.form.querySelectorAll('.input__field[required]');
     this.button = this.form.querySelector('.button');
+
     this.makePhoneMask();
 
-    this.button.addEventListener('click', () => {
+    this.button.addEventListener('click', e => {
+      e.preventDefault();
       this.validateFields();
       if (!this.isValid()) {
-        this.showMessage('error');
+        return this.showMessage('error');
       }
+      return this.onSubmit();
     });
 
     this.setButtonState();

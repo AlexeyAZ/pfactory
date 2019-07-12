@@ -21,6 +21,7 @@ const app = {
     const md = new MobileDetect(window.navigator.userAgent);
     // eslint-disable-next-line no-unused-vars
     const getScrollSettings = window.matchMedia('(max-width: 768px)').matches ? {} : {header: '.header'};
+    // eslint-disable-next-line no-unused-vars
     const scroll = new SmoothScroll('a[href*="#"]', getScrollSettings);
 
     const formPopup = new Popup('.js-form-popup');
@@ -147,35 +148,33 @@ const app = {
       autoHeight: true
     });
 
-    const sec9Form = new Form('.sec9__form');
-    sec9Form.init();
-    sec9Form.handleSubmit(() => {
+    const sec9Form = new Form('.sec9__form', () => {
       axios({
         method: 'post',
         url: 'https://pfactory.ru/send_mail',
         data: sec9Form.getFormData()
       })
-        .then(response => {
+        .then(() => {
           sec9Form.resetForm();
           sec9Form.showMessage('success');
         })
-        .catch(response => console.log(response));
+        .catch(error => console.log(error));
     });
+    sec9Form.init();
 
-    const popupForm = new Form('.index__form');
-    popupForm.init();
-    popupForm.handleSubmit(() => {
+    const popupForm = new Form('.index__form', () => {
       axios({
         method: 'post',
         url: 'https://pfactory.ru/send_mail',
         data: popupForm.getFormData()
       })
-        .then(response => {
+        .then(() => {
           popupForm.resetForm();
           popupForm.showMessage('success');
         })
-        .catch(response => console.log(response));
+        .catch(error => console.log(error));
     });
+    popupForm.init();
   }
 };
 
