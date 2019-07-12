@@ -5709,11 +5709,9 @@ var app = {
   bindEvents: function bindEvents() {
     (0, _svg4everybody2.default)();
     var md = new _mobileDetect2.default(window.navigator.userAgent);
-
     // eslint-disable-next-line no-unused-vars
-    var scroll = new _smoothScroll2.default('a[href*="#"]', {
-      header: '.header'
-    });
+    var getScrollSettings = window.matchMedia('(max-width: 768px)').matches ? {} : { header: '.header' };
+    var scroll = new _smoothScroll2.default('a[href*="#"]', getScrollSettings);
 
     var formPopup = new _Popup2.default('.js-form-popup');
     formPopup.init();
@@ -24057,12 +24055,10 @@ var Form = function () {
       [].concat(_toConsumableArray(fields)).forEach(function (input) {
         input.addEventListener('input', function () {
           _this6.validateField(input);
+          _this6.showMessage('clear');
         });
         input.addEventListener('blur', function () {
           _this6.validateField(input);
-        });
-        input.addEventListener('focus', function () {
-          _this6.showMessage('clear');
         });
       });
     }

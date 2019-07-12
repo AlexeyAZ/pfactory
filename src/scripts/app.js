@@ -19,11 +19,9 @@ const app = {
   bindEvents: () => {
     svg4everybody();
     const md = new MobileDetect(window.navigator.userAgent);
-
     // eslint-disable-next-line no-unused-vars
-    const scroll = new SmoothScroll('a[href*="#"]', {
-      header: '.header'
-    });
+    const getScrollSettings = window.matchMedia('(max-width: 768px)').matches ? {} : {header: '.header'};
+    const scroll = new SmoothScroll('a[href*="#"]', getScrollSettings);
 
     const formPopup = new Popup('.js-form-popup');
     formPopup.init();

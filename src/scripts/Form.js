@@ -165,12 +165,10 @@ export default class Form {
     [...fields].forEach(input => {
       input.addEventListener('input', () => {
         this.validateField(input);
+        this.showMessage('clear');
       });
       input.addEventListener('blur', () => {
         this.validateField(input);
-      });
-      input.addEventListener('focus', () => {
-        this.showMessage('clear');
       });
     });
 
