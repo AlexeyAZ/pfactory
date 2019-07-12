@@ -1,15 +1,17 @@
 .sec1 {
   background-color: $black;
-  background-image: url('../img/sec1-bg.jpg');
+  background-image: url('../img/sec1-bg-mobile.jpg');
+  @include img-2x('../img/sec1-bg-mobile@2x.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   overflow: hidden;
   padding-top: 0;
-  min-height: 100vh;
 
   @include media(w768) {
+    background-image: url('../img/sec1-bg.jpg');
     padding-top: 60px;
+    min-height: 100vh;
   }
 
   @include media(w1024) {
