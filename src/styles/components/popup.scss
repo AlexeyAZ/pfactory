@@ -2,19 +2,22 @@
   transition: $trans;
   background-color: rgba(0,0,0,0.7);
   display: flex;
-  align-items: center;
-  justify-content: center;
+  // align-items: center;
+  // justify-content: center;
   visibility: hidden;
   opacity: 0;
   overflow: auto;
   padding-left: $side-padding-mobile;
   padding-right: $side-padding-mobile;
+  padding-top: 15px;
+  padding-bottom: 15px;
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   min-width: $min-width;
+  min-height: 1px;
   z-index: 11;
 
   &_open {
@@ -25,9 +28,11 @@
   &__inner {
     background-color: white;
     border-radius: 10px;
+    margin: auto;
     padding: 30px 20px;
     position: relative;
     max-width: 770px;
+    min-height: 1px;
 
     @include media(w768) {
       padding: 50px 37px;

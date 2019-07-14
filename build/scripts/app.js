@@ -5701,6 +5701,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
+var ymSettings = {
+  counterNumber: 54186001,
+  goalId: 'form'
+};
+
 var app = {
   load: function load() {
     app.bindEvents();
@@ -5841,6 +5846,7 @@ var app = {
     });
 
     var sec9Form = new _Form2.default('.sec9__form', function () {
+      ym(ymSettings.counterNumber, 'reachGoal', ymSettings.goalId);
       (0, _axios2.default)({
         method: 'post',
         url: 'https://pfactory.ru/send_mail',
@@ -5855,6 +5861,7 @@ var app = {
     sec9Form.init();
 
     var popupForm = new _Form2.default('.index__form', function () {
+      ym(ymSettings.counterNumber, 'reachGoal', ymSettings.goalId);
       (0, _axios2.default)({
         method: 'post',
         url: 'https://pfactory.ru/send_mail',

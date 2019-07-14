@@ -11,6 +11,11 @@ import FixSection from './FixSection';
 import Popup from './Popup';
 import Form from './Form';
 
+const ymSettings = {
+  counterNumber: 54186001,
+  goalId: 'form'
+};
+
 const app = {
   load: () => {
     app.bindEvents();
@@ -149,6 +154,7 @@ const app = {
     });
 
     const sec9Form = new Form('.sec9__form', () => {
+      ym(ymSettings.counterNumber, 'reachGoal', ymSettings.goalId);
       axios({
         method: 'post',
         url: 'https://pfactory.ru/send_mail',
@@ -163,6 +169,7 @@ const app = {
     sec9Form.init();
 
     const popupForm = new Form('.index__form', () => {
+      ym(ymSettings.counterNumber, 'reachGoal', ymSettings.goalId);
       axios({
         method: 'post',
         url: 'https://pfactory.ru/send_mail',
