@@ -1,3 +1,5 @@
+$sec5-slides-length: 7;
+
 .sec5 {
   padding-top: 50px;
   padding-bottom: 35px;
@@ -28,9 +30,55 @@
       padding-left: 30px;
       padding-right: 30px;
     }
+
+    @include media(w1024) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    &_show-slides {
+      @for $i from 1 through $sec5-slides-length {
+        &:nth-child(#{$i}) {
+          .sec5__slider-slide {
+            .sec5__slider-image-wrap {
+              transform: translate(-50%, -50%) scale(0.9);
+            }
+          }
+        }
+      }
+      .sec5__slider-image-wrap {
+        opacity: 0;
+      }
+      .sec5__slide-info {
+        transform: translateY(0) !important;
+        opacity: 1;
+      }
+    }
+
+    &_mouse_enter {
+      .sec5__slider-image-wrap {
+        transition: $trans !important;
+      }
+      .sec5__slide-info {
+        transform: translateY(0) !important;
+        transition: $trans !important;
+      }
+    }
   }
 
   &__slider-slide {
+    @for $i from 1 through $sec5-slides-length {
+      &:nth-child(#{$i}) {
+        .sec5__slider-image-wrap {
+          transition: '#{$i}s' * 0.2 ease;
+        }
+        .sec5__slide-info {
+          transform: translateY(calc(-2px * #{$i}));
+          transition: '#{$i}s' * 0.2 ease;
+        }
+      }
+      
+    }
     @include media(w1024) {
       &:hover {
         .sec5__slider-image-wrap {
@@ -74,7 +122,7 @@
       height: auto;
     }
     @include media(w1024) {
-      transition: $trans;
+      // transition: $trans;
       transform: translate(-50%, -50%);
       position: absolute;
       top: 50%;
@@ -98,7 +146,7 @@
       flex-basis: 0;
     }
     @include media(w1024) {
-      transition: $trans;
+      // transition: $trans;
       background-color: white;
       border: 3px solid $blue;
       border-radius: 5px;
@@ -143,8 +191,15 @@
   }
 
   &__slider-arrow.slider-arrow {
+    &.swiper-button-prev {
+      padding-right: 0;
+    }
+    &.swiper-button-next {
+      padding-left: 0;
+    }
     align-items: center;
     height: 100%;
+    background-color: white;
   }
 
   &__slider-pagination {

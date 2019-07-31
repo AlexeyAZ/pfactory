@@ -43,16 +43,21 @@ $sec2-slider-content-img-height-mobile: 102px;
         padding-right: 10px;
       }
     }
-    @include media(w1024) {
-      &:hover {
-        .sec2__slider-content {
-          opacity: 0;
-        }
-        .sec2__slider-description {
-          opacity: 1;
-        }
+    &:hover {
+      .sec2__slider-content-img {
+        fill: $blue;
       }
     }
+    // @include media(w1024) {
+    //   &:hover {
+    //     .sec2__slider-content {
+    //       opacity: 0;
+    //     }
+    //     .sec2__slider-description {
+    //       opacity: 1;
+    //     }
+    //   }
+    // }
   }
 
   &__slider-slide-inner {
@@ -63,28 +68,30 @@ $sec2-slider-content-img-height-mobile: 102px;
       text-align: left;
     }
     @include media(w1024) {
-      text-align: center;
+      // text-align: center;
     }
   }
 
   &__slider-content {
     transition: 0.3s ease opacity;
-    @include media(w1024) {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-    }
+    // @include media(w1024) {
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   height: 100%;
+    //   width: 100%;
+    // }
   }
 
   &__slider-content-img {
+    transition: $trans;
     @include mediaDown(w768) {
       height: $sec2-slider-content-img-height-mobile;
     }
+    height: 100px;
   }
 
   &__slider-title {
@@ -94,6 +101,11 @@ $sec2-slider-content-img-height-mobile: 102px;
 
     @include media(w768) {
       padding-top: 25px;
+    }
+
+    @include media(w1366) {
+      font-size: 24px;
+      line-height: 32px;
     }
   }
 
@@ -131,19 +143,19 @@ $sec2-slider-content-img-height-mobile: 102px;
 
   &__slider-description {
 
-    @include media(w1024) {
-      transition: 0.3s ease opacity;
-      background-color: white;
-      border: 3px solid $blue;
-      border-radius: 5px;
-      display: flex;
-      align-items: center;
-      opacity: 0;
-      padding: 38px 17px;
-      min-height: 100%;
-    }
+    // @include media(w1024) {
+    //   transition: 0.3s ease opacity;
+    //   background-color: white;
+    //   border: 3px solid $blue;
+    //   border-radius: 5px;
+    //   display: flex;
+    //   align-items: center;
+    //   opacity: 0;
+    //   padding: 38px 17px;
+    //   min-height: 100%;
+    // }
     @include media(w1366) {
-      padding: 58px 37px;
+      padding: 28px 0;
     }
   }
 

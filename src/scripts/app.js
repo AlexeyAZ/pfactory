@@ -116,6 +116,46 @@ const app = {
       }
     });
 
+    if (!md.mobile()) {
+
+      const sec5SliderAnimation = () => {
+        const sec5SliderEl = sec5Slider.getSlider().el;
+        const toggleClass = () => {
+          if (sec5SliderEl.classList.contains('sec5__slider_mouse_enter')) {
+            sec5SliderEl.classList.remove('sec5__slider_mouse_enter');
+          }
+          sec5SliderEl.classList.toggle('sec5__slider_show-slides');
+        };
+        const setInitialState = () => {
+          sec5SliderEl.classList.add('sec5__slider_mouse_enter');
+          sec5SliderEl.classList.remove('sec5__slider_show-slides');
+        };
+        let timer = null;
+
+        return {
+          element: sec5SliderEl,
+          startTimer: () => {
+            timer = setInterval(toggleClass, 4000);
+          },
+          stopTimer: () => {
+            clearInterval(timer);
+            setInitialState();
+          }
+        };
+      };
+
+      const sec5Animation = sec5SliderAnimation();
+      sec5Animation.startTimer();
+
+      sec5Animation.element.addEventListener('mouseenter', () => {
+        sec5Animation.stopTimer();
+      });
+
+      sec5Animation.element.addEventListener('mouseleave', () => {
+        sec5Animation.startTimer();
+      });
+    }
+
     const sec6SliderMobile = new Slider();
     sec6SliderMobile.createSlider('.sec6__slider_mobile', {
       spaceBetween: 20,

@@ -5808,6 +5808,46 @@ var app = {
       }
     });
 
+    if (!md.mobile()) {
+
+      var sec5SliderAnimation = function sec5SliderAnimation() {
+        var sec5SliderEl = sec5Slider.getSlider().el;
+        var toggleClass = function toggleClass() {
+          if (sec5SliderEl.classList.contains('sec5__slider_mouse_enter')) {
+            sec5SliderEl.classList.remove('sec5__slider_mouse_enter');
+          }
+          sec5SliderEl.classList.toggle('sec5__slider_show-slides');
+        };
+        var setInitialState = function setInitialState() {
+          sec5SliderEl.classList.add('sec5__slider_mouse_enter');
+          sec5SliderEl.classList.remove('sec5__slider_show-slides');
+        };
+        var timer = null;
+
+        return {
+          element: sec5SliderEl,
+          startTimer: function startTimer() {
+            timer = setInterval(toggleClass, 4000);
+          },
+          stopTimer: function stopTimer() {
+            clearInterval(timer);
+            setInitialState();
+          }
+        };
+      };
+
+      var sec5Animation = sec5SliderAnimation();
+      sec5Animation.startTimer();
+
+      sec5Animation.element.addEventListener('mouseenter', function () {
+        sec5Animation.stopTimer();
+      });
+
+      sec5Animation.element.addEventListener('mouseleave', function () {
+        sec5Animation.startTimer();
+      });
+    }
+
     var sec6SliderMobile = new _slider2.default();
     sec6SliderMobile.createSlider('.sec6__slider_mobile', {
       spaceBetween: 20,
