@@ -5800,10 +5800,12 @@ var app = {
     sec5Slider.createSlider('.sec5__slider', {
       breakpoints: {
         1024: {
-          slidesPerView: 3
+          slidesPerView: 3,
+          slidesPerGroup: 3
         },
         1366: {
-          slidesPerView: 4
+          slidesPerView: 4,
+          slidesPerGroup: 4
         }
       }
     });
