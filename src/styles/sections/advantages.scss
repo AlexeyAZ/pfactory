@@ -26,6 +26,12 @@
     height: 100%;
   }
 
+  &__gallery {
+    @include mediaDown(w1024) {
+      padding-left: 10px;
+    }
+  }
+
   &__gallery-list {
     text-align: left;
     @include media(w1024) {
@@ -46,13 +52,18 @@
   }
 
   &__icon {
-    font-size: 3.5rem;
-    margin-right: 25px;
+    font-size: 2.2rem;
+    margin-right: 10px;
+    flex-shrink: 0;
     &_cross {
       fill: $red-dark;
     }
     &_check {
       fill: $green;
+    }
+    @include media(w768) {
+      font-size: 3.5rem;
+      margin-right: 25px;
     }
     @include media(w1024) {
       font-size: 5.6rem;
@@ -92,12 +103,14 @@
 
   .swiper-container-horizontal {
     .advantages__slider-arrow {
-      @include mediaDown(w768) {
-        top: calc(#{$head-icon-wrap-height-mobile} / 2);
-      }
-      @include mediaDown(w1024) {
-        top: calc(#{$head-icon-wrap-height-tablet} / 2);
-      }
+      top: auto;
+      bottom: 28%;
+      // @include mediaDown(w768) {
+      //   top: calc(#{$head-icon-wrap-height-mobile} / 2);
+      // }
+      // @include mediaDown(w1024) {
+      //   top: calc(#{$head-icon-wrap-height-tablet} / 2);
+      // }
       @include media(w1024) {
         display: none;
       }

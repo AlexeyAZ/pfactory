@@ -33,7 +33,8 @@ const replace = require('gulp-replace');
 const eslint = require('gulp-eslint');
 const devip = require('dev-ip');
 const imagemin = require('gulp-imagemin');
-const webpack = require('webpack-stream');
+const webpackStream = require('webpack-stream');
+const webpack = require('webpack');
 
 console.log('ip list: ' + devip()); // show all ip list. Need for browsersync host option
 
@@ -62,10 +63,10 @@ gulp.task('lint', function () {
 
 gulp.task('scripts', function () {
   return gulp.src([folders.src + '/scripts/app.js'])
-    .pipe(webpack({
-      plugins: [
-        // new webpack.webpack.optimize.UglifyJsPlugin({ minimize: true })
-      ],
+    .pipe(webpackStream({
+      optimization: {
+        minimize: true
+      },
       module: {
         rules: [
           {
@@ -79,7 +80,7 @@ gulp.task('scripts', function () {
         filename: 'app.js'
       },
       devtool: 'source-map'
-    }))
+    }, webpack))
     .pipe(gulp.dest(folders.build + '/scripts'))
     .pipe(bs.stream());
 });
