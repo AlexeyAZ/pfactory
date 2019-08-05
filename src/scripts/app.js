@@ -109,100 +109,30 @@ const app = {
       breakpoints: {
         1024: {
           slidesPerView: 3,
-          slidesPerGroup: 3,
+          slidesPerGroup: 3
         },
         1366: {
           slidesPerView: 4,
-          slidesPerGroup: 4,
+          slidesPerGroup: 4
         }
-      },
+      }
     });
-
     if (!md.mobile() && !window.matchMedia('(max-width: 1024px)').matches) {
-
       const sec5SliderAnimation = () => {
+        const sec5SliderEl = sec5Slider.getSlider().el;
         const activeSlideClass = 'sec5__slider-slide_active';
-        let activeIndex = 0;
-        let swiperGroupIndex = 1;
-        let slidesPerView = sec5Slider.getSlider().params.slidesPerView;
-        let sec5SliderEl = sec5Slider.getSlider().el;
-        let sec5Slides = sec5SliderEl.querySelectorAll('.sec5__slider-slide');
+        const sec5Slides = sec5SliderEl.querySelectorAll('.sec5__slider-slide');
+        sec5Slides[1].classList.add(activeSlideClass);
 
-        const setActiveSlide = index => {
-          sec5Slides[index].classList.add(activeSlideClass);
-        };
-        const clearActiveClass = () => {
+        sec5SliderEl.addEventListener('mouseenter', () => {
           sec5Slides.forEach(item => {
             if (item.classList.contains(activeSlideClass)) {
               item.classList.remove(activeSlideClass);
             }
           });
-        };
-        const toggleActiveIndex = maxLength => {
-          if (activeIndex === maxLength - 1) {
-            activeIndex = 0;
-          } else {
-            activeIndex += 1;
-          }
-          if (activeIndex === swiperGroupIndex * slidesPerView) {
-            swiperGroupIndex += 1;
-            return sec5Slider.getSlider().slideTo(activeIndex);
-          }
-          if (activeIndex === 0) {
-            swiperGroupIndex = 0;
-            return sec5Slider.getSlider().slideTo(0);
-          }
-        };
-        const toggleActiveSlide = () => {
-          clearActiveClass();
-          toggleActiveIndex(sec5Slides.length);
-          setActiveSlide(activeIndex);
-        };
-        let timer = null;
-
-        const reset = () => {
-          clearActiveClass();
-          activeIndex = 0;
-          swiperGroupIndex = 1;
-          slidesPerView = sec5Slider.getSlider().params.slidesPerView;
-          sec5SliderEl = sec5Slider.getSlider().el;
-          sec5Slides = sec5SliderEl.querySelectorAll('.sec5__slider-slide');
-          clearInterval(timer);
-          timer = null;
-          sec5Slider.getSlider().slideTo(0);
-        };
-
-        return {
-          element: sec5SliderEl,
-          startTimer: () => {
-            if (activeIndex === 0) {
-              setActiveSlide(activeIndex);
-            }
-            timer = setInterval(toggleActiveSlide, 4000);
-          },
-          stopTimer: () => {
-            clearInterval(timer);
-            clearActiveClass();
-          },
-          reset
-        };
+        });
       };
-
-      const sec5Animation = sec5SliderAnimation();
-      sec5Animation.startTimer();
-
-      window.addEventListener('resize', () => {
-        sec5Animation.reset();
-        sec5Animation.startTimer();
-      })
-
-      sec5Animation.element.addEventListener('mouseenter', () => {
-        sec5Animation.stopTimer();
-      });
-
-      sec5Animation.element.addEventListener('mouseleave', () => {
-        sec5Animation.startTimer();
-      });
+      sec5SliderAnimation();
     }
 
     const sec6SliderMobile = new Slider();
