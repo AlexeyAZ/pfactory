@@ -115,7 +115,8 @@ const app = {
           slidesPerView: 4,
           slidesPerGroup: 4
         }
-      }
+      },
+      autoHeight: true
     });
     if (!md.mobile() && !window.matchMedia('(max-width: 1024px)').matches) {
       const sec5SliderAnimation = () => {

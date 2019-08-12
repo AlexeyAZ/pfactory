@@ -2,7 +2,7 @@ $sec5-slides-length: 7;
 
 .sec5 {
   padding-top: 50px;
-  padding-bottom: 35px;
+  padding-bottom: 20px;
 
   @include mediaDown(w768) {
     text-align: center;
@@ -26,44 +26,16 @@ $sec5-slides-length: 7;
   }
 
   &__slider {
+    padding-bottom: 45px;
     @include media(w768) {
       padding-left: 30px;
       padding-right: 30px;
+      padding-bottom: 70px;
     }
 
-    // @include media(w1024) {
-    //   padding-top: 20px;
-    //   padding-bottom: 20px;
-    // }
-
-    // &_show-slides {
-    //   @for $i from 1 through $sec5-slides-length {
-    //     &:nth-child(#{$i}) {
-    //       .sec5__slider-slide {
-    //         .sec5__slider-image-wrap {
-    //           transform: translate(-50%, -50%) scale(0.9);
-    //         }
-    //       }
-    //     }
-    //   }
-    //   .sec5__slider-image-wrap {
-    //     opacity: 0;
-    //   }
-    //   .sec5__slide-info {
-    //     transform: translateY(0) !important;
-    //     opacity: 1;
-    //   }
-    // }
-
-    // &_mouse_enter {
-    //   .sec5__slider-image-wrap {
-    //     transition: $trans !important;
-    //   }
-    //   .sec5__slide-info {
-    //     transform: translateY(0) !important;
-    //     transition: $trans !important;
-    //   }
-    // }
+    @include media(w1024) {
+      padding-bottom: 0;
+    }
   }
 
   &__slider-slide {
@@ -185,9 +157,32 @@ $sec5-slides-length: 7;
     font-size: 24px;
   }
 
-  &__slide-button {
+  &__slide-button.sec5__slide-button {
     margin-top: 26px;
     white-space: nowrap;
+
+    @include media(w768) {
+      display: none;
+    }
+
+    @include media(w1024) {
+      display: inline-flex;
+    }
+  }
+
+  &__slide-button-tablet {
+    display: none;
+    justify-content: center;
+    flex: 1;
+    padding-top: 45px;
+
+    @include media(w768) {
+      display: flex;
+    }
+
+    @include media(w1024) {
+      display: none;
+    }
   }
 
   &__slide-button-icon {
@@ -207,11 +202,12 @@ $sec5-slides-length: 7;
     }
     align-items: center;
     height: 100%;
-    background-color: white;
   }
 
   &__slider-pagination {
-    display: none;
+    @include media(w1024) {
+      display: none;
+    }
   }
 
   &__slider-scrollbar {

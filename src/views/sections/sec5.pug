@@ -44,6 +44,8 @@
     }
   ]
 
+
+
 +section(id=menu[1].href).sec5.bg-white
   +container
     h3.sec5__title.
@@ -51,6 +53,11 @@
 
     +slider('sec5')
       each item in sec5Data
+
+        mixin sec5Button(buttonClass = '')
+          +button({ fill: true, icon: {name: 'icon_buy_people', class: `sec5__slide-button-icon`} })&attributes(attributes).
+            Купить человека
+
         +sliderSlide('sec5')
           .sec5__slider-slide-inner
             .sec5__slider-image-wrap
@@ -79,7 +86,8 @@
                   |
                   strong.
                     ₽ / час
-              +button({ fill: true, icon: {name: 'icon_buy_people', class: 'sec5__slide-button-icon'} }).sec5__slide-button.
-                Купить человека
+              +sec5Button().sec5__slide-button
             .sec5__slider-description
               p.
+          .sec5__slide-button-tablet
+            +sec5Button()
