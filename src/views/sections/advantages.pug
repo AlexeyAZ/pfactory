@@ -3,23 +3,23 @@
     {
       name: 'disadvantages',
       icon: 'icon_telescope',
-      title: 'Недостатки монолитных систем',
+      title: translate.advantages.pitfails.title,
       list: [
-        'Неделимость. Систему крайне сложно менять',
-        'Низкая производительность. Системы копят много мусора',
-        'Стоимость. Дорогостоящие лицензии и поддержка',
-        'Отсутствие новизны. Нужно обновлять всю систему'
+        translate.advantages.pitfails.atomicity,
+        translate.advantages.pitfails.lowPerformance,
+        translate.advantages.pitfails.costs,
+        translate.advantages.pitfails.lackNovelty
       ]
     },
     {
       name: 'advantages',
       icon: 'icon_microscope',
-      title: 'Преимущества микросервисов',
+      title: translate.advantages.advantages.title,
       list: [
-        'Модульность. Системы собираются как конструктор',
-        'Легкая интеграция. Стандартный интерфейс для всего',
-        'Стоимость и скорость. Open Source технологии',
-        'Обновления и доступность. Легкая сборка и замена модулей'
+        translate.advantages.advantages.modularity,
+        translate.advantages.advantages.easyIntegration,
+        translate.advantages.advantages.costAndSpeed,
+        translate.advantages.advantages.upgrades,
       ]
     }
   ]
@@ -49,5 +49,5 @@ mixin advantageGallery(data, type='advantages')
             != item.title
           +advantageGallery(item.list, item.name)
   +container
-    +button({fill: true, icon: {name: 'icon_create_platform', class: 'advantages__button-icon'}}).
-      Разработать платформу
+    +button({fill: true, icon: {name: 'icon_create_platform', class: 'advantages__button-icon'}})
+      !=translate.advantages.developPlatformButton

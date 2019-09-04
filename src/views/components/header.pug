@@ -20,6 +20,6 @@ mixin header()
               a(href=`#${item.href}`).header__menu-link
                 != item.text
       .header__actions
-        +button().header__button.
-          Оставить заявку
+        +button().header__button
+          !=translate.header.requestOrderButton
         +social.header__social_mobile

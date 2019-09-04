@@ -2,38 +2,38 @@
   const sec2Data = [
     {
       icon: 'services',
-      title: 'Разработка IT-платформ',
+      title: translate.sec2.development.title,
       list: [
-        'Создание платформы вместо монолитной системы.',
-        'Разработка микросервисов.',
-        'Проектирование и создание прототипов.'
+        translate.sec2.development.creatingPlatform,
+        translate.sec2.development.microservices,
+        translate.sec2.development.prototypes
       ]
     },
     {
       icon: 'communication',
-      title: 'Автоматизация бизнеса',
+      title: translate.sec2.automation.title,
       list: [
-        'Создание BPMN-архитектур.',
-        'Интеграция внешних сервисов с вашими системами.',
-        'Декомпозиция монолитных систем в сервисную и гибкую систему.'
+        translate.sec2.automation.bpmn,
+        translate.sec2.automation.integration,
+        translate.sec2.automation.decomposition
       ]
     },
     {
       icon: 'lightweight',
-      title: 'Аутсорсинг разработки',
+      title: translate.sec2.outsourcing.title,
       list: [
-        'T&M. Разработчики выделены в вашу группу по часам.',
-        'Собственная Agile команда для разработки отдельных блоков проекта.',
-        'Проект под ключ.'
+        translate.sec2.outsourcing.tAndM,
+        translate.sec2.outsourcing.team,
+        translate.sec2.outsourcing.turnKey
       ]
     }
   ]
 
 +section.sec2(id=menu[0].href)
   +container.sec2__container
-    h3.sec2__title.
-      Основные направления нашей деятельности
-    
+    h3.sec2__title
+      !=translate.sec2.title
+
     +slider('sec2')
       each item in sec2Data
         +sliderSlide('sec2')

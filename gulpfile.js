@@ -35,6 +35,7 @@ const devip = require('dev-ip');
 const imagemin = require('gulp-imagemin');
 const webpackStream = require('webpack-stream');
 const webpack = require('webpack');
+const pugI18n = require('gulp-pug-i18n');
 
 console.log('ip list: ' + devip()); // show all ip list. Need for browsersync host option
 
@@ -85,10 +86,14 @@ gulp.task('scripts', function () {
     .pipe(bs.stream());
 });
 
-
 gulp.task('pug', function () {
   gulp.src(folders.src + '/views/*.pug')
-    .pipe(pug({
+    .pipe(pugI18n({
+      i18n: {
+        locales: 'src/locales/*.json',
+        filename: '{{basename}}.{{lang}}.html',
+        namespace: 'translate'
+      },
       pretty: true
     }))
     .on('error', onError)

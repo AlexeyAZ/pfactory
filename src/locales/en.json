@@ -1,0 +1,63 @@
+{
+  "header": {
+    "menu": {
+      "directions": "Business directions",
+      "prices": "Prices",
+      "about": "Who we are",
+      "projects": "Projects",
+      "contacts": "Contacts"
+    },
+    "requestOrderButton": "Request order"
+  },
+  "sec1": {
+    "title_1": "Pfactory - is",
+    "title_2": "platform factory",
+    "subtitle": "Analysis of any developing business can  for sure reveal a platform in its heart. A platform is not just a mere IT-solution, - its ideology for expanding business.",
+    "creatingPlatformsButton": "Creating platforms",
+    "sellPeopleButton": "Man power procurement"
+  },
+  "sec2": {
+    "title": "Our core business",
+    "development": {
+      "title": "IT-platform development",
+      "creatingPlatform": "Creating a platform instead of a monolithic system.",
+      "microservices": "Microservice development.",
+      "prototypes": "Prototypes projecting and creation."
+    },
+    "automation": {
+      "title": "Business automation",
+      "bpmn": "Creating BPMN – architectures.",
+      "integration": "Integration of external services with your systems.",
+      "decomposition": "Decomposition of monolithic systems into service and flexible system."
+    },
+    "outsourcing": {
+      "title": "Development outsourcing",
+      "tAndM": "T&M. Our design engineers are assigned hourly to your group.",
+      "team": "Own Agile team for developing project separate units.",
+      "turnKey": "Turn-key project."
+    }
+  },
+  "sec3": {
+    "title": "Platforms instead of monolithic IT-systems — your business flexibility",
+    "paragraph_1_1": "Classic systems set back business development.",
+    "paragraph_1_2": "They are overheated, overloaded, deprecated.",
+    "paragraph_2": "Our platforms comprise microservices group, where each performs a required function: for instance, file storage, transactions or document signing process."
+  },
+  "advantages": {
+    "pitfails": {
+      "title": "Pitfalls of monolithic systems",
+      "atomicity": "Atomicity. Changing the system is a monumental challenge",
+      "lowPerformance": "Low performance. Systems store up a lot of garbage",
+      "costs": "Costs. Expensive licences and maintainability",
+      "lackNovelty": "Lack of novelty. Entire system upgrade needed"
+    },
+    "advantages": {
+      "title": "Microservices advantage",
+      "modularity": "Modularity. Systems are assembled as design kits",
+      "easyIntegration": "Easy integration. Standard all purpose interface",
+      "costAndSpeed": "Cost and speed. Open Source technologies",
+      "upgrades": "Upgrades and availability. Easy assembling and modules replacement"
+    },
+    "developPlatformButton": "Develop a platform"
+  }
+}

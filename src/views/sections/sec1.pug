@@ -4,13 +4,13 @@ include ../components/header.pug
   const sec1Data = [
     {
       icon: 'icon_create_platform',
-      text: 'Создание платформ',
+      text: translate.sec1.creatingPlatformsButton,
       image: 'wheel',
       href: menu[5].href,
     },
     {
       icon: 'icon_buy_people',
-      text: 'Продажа людей',
+      text: translate.sec1.sellPeopleButton,
       image: 'sheme',
       href: menu[6].href,
     }
@@ -20,28 +20,18 @@ mixin wheel
   .sec1__wheel&attributes(attributes)
     .sec1__wheel-inner
       img(src='./img/wheel.svg').sec1__wheel-img
-      //- img(src='./img/wheel_text.svg').sec1__wheel-text
-
-mixin sheme(cls)
-  .sec1__sheme(class=cls)
-    .sec1__sheme-inner
-      p.sec1__sheme-text.sec1__sheme-text_data.
-        Агрегация <br>данных
-      p.sec1__sheme-text.sec1__sheme-text_groups.
-        Рассылка <br>по группам
-      p.sec1__sheme-text.sec1__sheme-text_users.
-        Классификация <br>пользователей
-      img(src=`./img/sheme.svg`)&attributes(attributes)
 
 +section.sec1.color-white
   +header.sec1__mobile-header
   +container.sec1__container
     .sec1__content
       .sec1__column.sec1__column_text
-        h1.
-          Pfactory — это <br> фабрика платформ
-        p.
-          Если проанализировать любой растущий бизнес, в его сердце мы всегда найдем платформу. Платформа — это не просто ИТ-решение, это идеология, по которой бизнес может расти.
+        h1
+          !=translate.sec1.title_1
+          <br>
+          !=translate.sec1.title_2
+        p
+          !=translate.sec1.subtitle
 
         .sec1__platforms
           each item in sec1Data
@@ -49,21 +39,7 @@ mixin sheme(cls)
               +icon(item.icon).sec1__platforms-icon
               a(href=`#${item.href}`).sec1__platforms-link
                 != item.text
-        
-        //- .sec1__platforms.sec1__platforms_mobile
-          +slider('sec1')
-            each item in sec1Data
-              +sliderSlide('sec1')
-                .sec1__platforms-title
-                  +icon(item.icon).sec1__platforms-icon
-                  p.text-l
-                    != item.text
-                .sec1__platforms-image-wrap
-                  if item.image === 'wheel'
-                    +wheel.sec1__platforms-wheel
-                  else
-                    +sheme.sec1__platforms-img
-      
+
       .sec1__column.sec1__column_image
         +wheel
 
