@@ -1,49 +1,49 @@
 -
   const sec7Data = [
     {
-      title: 'Платформа Деловая среда',
-      text: 'Система онлайн-образования — курсы, видео уроки, тесты и опросы, вебинары, сообщества, новости и блоги.',
+      title: translate.sec7.businessEnvironment.title,
+      text: translate.sec7.businessEnvironment.text,
       techno: 'Java Play, Java Spring, React JS, Kafka, Postgres',
       hours: '20 000',
       src: 'ds.png',
-      alt: 'Деловая среда',
+      alt: translate.sec7.businessEnvironment.title,
       href: 'https://dasreda.ru/'
     },
     {
-      title: 'СберКредо',
-      text: 'Инвестиционная платформа, которая предоставляет возможность компаниям малого и микробизнеса получить финансирование от физических лиц и институциональных инвесторов.',
+      title: translate.sec7.sberkredo.title,
+      text: translate.sec7.sberkredo.text,
       techno: 'Java Play, AKKA, Java Spring, React JS, React Native, Kafka, Postgres, Docker, Kubernetes',
       hours: '12 000',
       src: 'sk.png',
-      alt: 'СберКредо',
+      alt: translate.sec7.sberkredo.title,
       href: 'https://sberkredo.ru/',
       class: 'sk'
     },
     {
-      title: 'Партнерская программа CPA',
-      text: 'Реализация банковских продуктов для малого и среднего бизнеса через партнерскую сеть. Платформа-аггрегатор работы сотен продающих компаний, банковские сервисы на всей территории РФ.',
+      title: translate.sec7.cpa.title,
+      text: translate.sec7.cpa.text,
       techno: 'Ruby on rails, React JS, Postgres ',
       hours: '8 000',
       src: 'cpa.png',
-      alt: 'Партнерская программа CPA',
+      alt: translate.sec7.cpa.title,
       href: 'https://partners.dasreda.ru/'
     },
     {
-      title: 'Legal Cycle',
-      text: 'Блокчейн-платформа для защиты от контрафактной продукции. Аутентичность продуктов защищена микрочипом Java Card и связанным смарт-контрактом в сети блокчейн.',
+      title: translate.sec7.legalCycle.title,
+      text: translate.sec7.legalCycle.text,
       techno: 'Java card JCOP, Java, Ethereum solidity, React JS, Postgres',
       hours: '3 400',
       src: 'legalcycle.png',
-      alt: 'Legal Cycle',
+      alt: translate.sec7.legalCycle.title,
       href: 'www.legalcycle.org'
     },
     {
-      title: 'Мобильный репортер ПГК',
-      text: 'Приложение и набор сервисов для оценки состояния вагонов при приеме их клиентом. Платформа агрегирует данные событий дислокации вагонов и ищет замену в режиме реального времени. Прогнозирование времени эксплуатации вагонов на основе полученных данных из мобильного приложения.',
+      title: translate.sec7.pgk.title,
+      text: translate.sec7.pgk.text,
       techno: 'Java Play, AKKA, ReactJS, Postgres, Cloudera, Redis',
       hours: '1 500',
       src: 'pgk.png',
-      alt: 'ПГК',
+      alt: translate.sec7.pgk.title,
       href: 'http://www.pgkweb.ru/'
     }
   ]
@@ -51,12 +51,12 @@
 +section(id=menu[3].href).sec7.bg-white
   +container
     .sec7__head
-      h3.sec7__title.
-        В центре списка наших проектов
+      h3.sec7__title
+        != translate.sec7.title
       a(href="./docs/pfactory_pres_web.pdf" target="_blank").sec7__save-presentation-link
         +icon('icon_download').sec7__save-presentation-icon
-        span.
-          Скачать презентацию
+        span
+          != translate.sec7.downloadPresentationButton
 
     +slider('sec7', {pagination: {invert: false }})
       each item in sec7Data
@@ -72,13 +72,13 @@
                   != item.text
                 p.sec7__slider-slide-technologies
                   strong.
-                    Технологии: 
+                    #{translate.sec7.technologies}: 
                   |
                   |
                   != item.techno
                 span
                   strong.
-                    Количество часов: 
+                    #{translate.sec7.hours}: 
                   |
                   |
                   != item.hours

@@ -10,8 +10,7 @@ const localServer = {
       baseDir: './' + folders.build
     },
     open: true,
-    notify: false,
-    // https: true
+    notify: false
   }
 };
 
@@ -19,7 +18,6 @@ const localServer = {
 const gulp = require('gulp');
 const bs = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
-const pug = require('gulp-pug');
 const bulkSass = require('gulp-sass-bulk-import');
 const moduleImporter = require('sass-module-importer');
 const sass = require('gulp-sass');
@@ -36,6 +34,10 @@ const imagemin = require('gulp-imagemin');
 const webpackStream = require('webpack-stream');
 const webpack = require('webpack');
 const pugI18n = require('gulp-pug-i18n');
+const siteConfig = require('./src/config/siteConfig');
+const gulpData = require('gulp-data');
+
+console.log(siteConfig)
 
 console.log('ip list: ' + devip()); // show all ip list. Need for browsersync host option
 
@@ -93,6 +95,9 @@ gulp.task('pug', function () {
         locales: 'src/locales/*.json',
         filename: '{{basename}}.{{lang}}.html',
         namespace: 'translate'
+      },
+      data: {
+        langOptions: siteConfig.langOptions
       },
       pretty: true
     }))

@@ -202,6 +202,31 @@ const app = {
         .catch(error => console.log(error));
     });
     popupForm.init();
+
+    const selectLanguageHandler = () => {
+      const elements = document.querySelectorAll('.js-select-language');
+      const disableActive = el => el.classList.remove('active');
+      const changeActive = el => {
+        if (el.classList.contains('active')) {
+          return disableActive(el);
+        }
+        return el.classList.add('active');
+      };
+      [...elements].forEach(item => {
+        if (md.mobile()) {
+          item.addEventListener('click', () => changeActive(item));
+          document.addEventListener('click', e => {
+            if (!e.target.classList.toString().includes('select-language')) {
+              disableActive(item);
+            }
+          });
+        }else {
+          item.addEventListener('mouseenter', () => changeActive(item));
+          item.addEventListener('mouseleave', () => changeActive(item));
+        }
+      });
+    };
+    selectLanguageHandler();
   }
 };
 

@@ -1,0 +1,55 @@
+@mixin activeStyle {
+  .select-language__list {
+    display: block;
+  }
+  > .select-language__item {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .select-language__list {
+    > .select-language__item {
+      &:first-child {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+      }
+    }
+  }
+}
+
+.select-language {
+  display: inline-block;
+  position: relative;
+  &__item {
+    background-color: $gray-darkest;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  &__item-img {
+    margin-right: 9px;
+  }
+  &__item-lang {
+    margin-bottom: 0;
+  }
+  &__list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    .select-language__item {
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+  &.active {
+    @include activeStyle;
+  }
+}

@@ -55,10 +55,10 @@ mixin sec9Contact(item)
       .sec9__map.sec9__map_mobile
     .sec9__column
       .sec9__column-info
-        h3.
-          Контакты
-        p.
-          Позвоните нам или оставьте вашу заявку. Мы свяжемся с вами в течение часа.
+        h3
+          != translate.sec9.title
+        p
+          != translate.sec9.subtitle
         +sec9Contact(sec9Data[0]).sec9__adress
         .sec9__contacts
           each item in sec9Data
@@ -66,13 +66,13 @@ mixin sec9Contact(item)
         form.sec9__form
           .sec9__form-fields
             .sec9__form-fields-item.sec9__form-inputs
-              +input(placeholder="Ваше имя", required, name="name")
-              +input(placeholder="Ваш e-mail", required, name="email" type="email")
-              +input(placeholder="Ваш телефон", required, name="phone" type="tel")
+              +input(placeholder=translate.formFields.name, required, name="name")
+              +input(placeholder=translate.formFields.email, required, name="email" type="email")
+              +input(placeholder=translate.formFields.phone, required, name="phone" type="tel")
             .sec9__form-fields-item
-              +input('textarea')(placeholder="Сообщение", rows="8", name="comment").sec9__form-textarea
+              +input('textarea')(placeholder=translate.formFields.message, rows="8", name="comment").sec9__form-textarea
           .sec9__button-wrap
-            +button({tag: 'button', invert: true})(type="submit").sec9__button.
-              Отправить заявку
+            +button({tag: 'button', invert: true})(type="submit").sec9__button
+              != translate.sec9.sendRequestButton
             +formMessages
       +footer

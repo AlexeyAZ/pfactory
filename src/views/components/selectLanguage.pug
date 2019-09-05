@@ -1,0 +1,18 @@
+mixin selectLanguage(data)
+  .select-language.js-select-language&attributes(attributes)
+    each item in data
+      -
+        const getClass = item.lang === translate.lang ? 'select-language__item_active' : ''
+      if item.lang === translate.lang
+        .select-language__item
+          img(src=item.img alt="").select-language__item-img
+          p.select-language__item-lang
+            != item.text
+    div.select-language__list
+      each item in data
+        if item.lang !== translate.lang
+          a(href=item.href).select-language__item
+            img(src=item.img alt="").select-language__item-img
+            p.select-language__item-lang
+              != item.text
+

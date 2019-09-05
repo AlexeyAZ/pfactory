@@ -57,6 +57,13 @@
   }
 
   &__left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    @include media(w768) {
+      margin-bottom: 0;
+    }
     @include media(w1024) {
       display: flex;
       align-items: center;
@@ -64,12 +71,7 @@
   }
 
   &__logo {
-    margin-bottom: 15px;
     position: relative;
-
-    @include media(w768) {
-      margin-bottom: 0;
-    }
 
     @include media(w1024) {
       margin-right: 10px;
@@ -136,6 +138,27 @@
   &__actions {
     @include media(w768) {
       display: flex;
+    }
+  }
+
+  .header__select-language {
+    align-self: center;
+    &_mobile {
+      margin-left: auto;
+      @include media(w768) {
+        margin-left: 30px;
+      }
+      @include media(w1024) {
+        display: none;
+      }
+    }
+    &_desktop {
+      display: none;
+      @include media(w1024) {
+        display: block;
+        margin-left: auto;
+        margin-right: 20px;
+      }
     }
   }
 

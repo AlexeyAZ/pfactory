@@ -1,4 +1,5 @@
 {
+  "lang": "en",
   "header": {
     "menu": {
       "directions": "Business directions",
@@ -59,5 +60,122 @@
       "upgrades": "Upgrades and availability. Easy assembling and modules replacement"
     },
     "developPlatformButton": "Develop a platform"
+  },
+  "sec4": {
+    "title": "Development outsourcing",
+    "subTitle_1": "Our team or an individual IT-designer  can be assigned to your project.",
+    "subTitle_2": "There are two kinds of approach to solving the task:",
+    "timeAndMaterial": {
+      "title": "Time and material",
+      "text": "It’s the best solution if your corporate in-house IT-team needs provisional reinforcement to pass through the peak of the project. This approach serves for creating mock-up solutions in case you have several ideas of your future project."
+    },
+    "projectApproach": {
+      "title": "Project approach",
+      "text": "This approach works for fit-for-purpose solutions. First we create the project structure, interface engineering, data models, business processes, internal and external communication services system and then start development."
+    }
+  },
+  "sec5": {
+    "title": "Technologies and rates",
+    "hour": "hour",
+    "buyManButton": "Hire a professional"
+  },
+  "sec6": {
+    "title": "About us",
+    "paragraph_1": "We are a professional team, specializing in fintech market solutions. We have accomplished dozens of platform solutions based on Opensource technologies, like Java, Python, Go, Ruby on Rails, ReactJS, GraphQL, PostreSQL, Cloudera, Camunda, etc..",
+    "contactUsButton": "Contact us",
+    "programmers": "programmers",
+    "ceo": {
+      "name": "Yevgeny Agafonov",
+      "position": "CEO",
+      "about": "10 years of IT-companies management experience. Dozens of implemented projects and teams created."
+    },
+    "cio": {
+      "name": "Mikhail Sarytchev",
+      "position": "CIO",
+      "about": "18 years experience in IT. Development leader and active member of Opensource Russia."
+    }
+  },
+  "sec7": {
+    "title": "In the core of our project list",
+    "downloadPresentationButton": "Download presentation",
+    "technologies": "Technologies applied",
+    "hours": "Hours",
+    "businessEnvironment": {
+      "title": "Business environment",
+      "text": "On-line education system – courses, video lessons, tests, questionnaires, webinars, communities, news and blogs."
+    },
+    "sberkredo": {
+      "title": "Sberkredo",
+      "text": "Investment platform enabling small and microbusiness companies to get financing from individuals and institutional investors."
+    },
+    "cpa": {
+      "title": "CPA Partnership program",
+      "text": "Banking product implementation through partnership network. The platform is the aggregator of hundred sales companies, banking services throughout Russia."
+    },
+    "legalCycle": {
+      "title": "Legal Cycle",
+      "text": "Blockchain platform against counterfeit. Product authenticity protected by Java Card microchip and blockchain network smart-contract."
+    },
+    "pgk": {
+      "title": "Mobile reporter Freight One",
+      "text": "Set of services and application for carriage condition assessment by customer’s acceptance. The system aggregates carriage location data and seeks replacement for out-of-order carriages in real-time mode. Predicting carriage in-service time based on mobile application data."
+    }
+  },
+  "sec8": {
+    "dbi": {
+      "text": "We highly estimate that you, guys, have accomplished your job as qualified professionals and that your response to the problems revealed was perfect!On the whole it was great to work together and I am convinced we'll have more to do in the nearest future!",
+      "name": "Mikhail Serebryanikov",
+      "company": "DBI systems"
+    },
+    "technologiiKreditovaniya": {
+      "text": "At every stage Pfactory have gained a reputation of a highly prefessional, competent and ambitious partner. Our tentative relations that started six months ago, have turned into regular partnership that will thrive. Your qulified and professional developers team, combined with a ready UI library enabled us to significantly accelerate the development stage. Based on our own experience, I woud not hesitate to recommend your company to others who search for professional development through outsourcing.",
+      "name": "Artur Gadziev",
+      "company": "Technologii Kreditovaniya"
+    },
+    "rostelecom": {
+      "text": "When we formulated the idea of a new software program,  Pfactory team proved to be absolutely fantastic in requirement capture and technical solutions, in fact they  created a prototype to check their approach. It was a strong basis for developing the end-product and a perfect start of future cooperation.",
+      "name": "Nikolay Tarin",
+      "company": "Rostelecom"
+    },
+    "businessEnvironment": {
+      "text": "Pfactory have helped us to create a world class education platform.  A team of advanced professionals skilled to meet all our needs in platforms development. There's not a single task that is big or small for them; they are reliable and time-sensitive.",
+      "name": "Aleksander Volchenkov",
+      "company": "Business Environment"
+    },
+    "sberbank": {
+      "text": "Pfactory offers effective project management that has a significant impact on time and money.  New releases are supplied in due time and they entirely correspond with your requirements. We are absolutely happy with their job well done and recommend them as partners for applications development.",
+      "name": "Vitaly Mikhailov",
+      "company": "Sberbank"
+    },
+    "ylab": {
+      "text": "A while ago a dedicated unit of our company became an autonomous and strong player.  We granted the guys a good start but they gave us back much more: implementation of turn-key platform projects on Java  and happy customers.  We wish you a long market life and further cooperation.",
+      "name": "Pavel Frolov",
+      "company": "YLab"
+    }
+  },
+  "sec9": {
+    "title": "Contacts",
+    "subtitle": "Call us or leave your request order. We'll contact you within one hour.",
+    "sendRequestButton": "Send request order"
+  },
+  "formFields": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message ",
+    "mandatoryFields": "Mandatory fields",
+    "successMessage": "Спасибо, ваше сообщение отправлено!"
+  },
+  "popup": {
+    "title": "Development request",
+    "subtitle": "Call us or leave your request order. We'll contact you within one hour.",
+    "sendRequestButton": "Send request order"
+  },
+  "meta": {
+    "title": "Pfactory: Hiring sofware specialists,  IT-platforms development, business automation",
+    "description": "Analysis of any developing business can  for sure reveal a platform in its heart. A platform is not just a mere IT-solution, - its ideology for expanding business"
+  },
+  "contacts": {
+    "address": "Novokhorochevsky proyezd, 18. Moscow, 123308"
   }
 }

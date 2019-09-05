@@ -1,4 +1,4 @@
-mixin formMessages(data = {error: 'Необходимо заполнить обязательные поля', success: 'Спасибо, ваше сообщение отправлено!'})
+mixin formMessages(data = {error: translate.formFields.mandatoryFields, success: translate.formFields.successMessage})
   -
     const { error, success } = data
   .form__messages

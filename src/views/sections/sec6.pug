@@ -1,16 +1,16 @@
 -
   const aboutData = [
     {
-      name: 'Евгений Агафонов',
-      position: 'CEO',
-      about: '10 лет в управлении IT компаний. Десятки завершенных проектов и созданных команд.',
+      name: translate.sec6.ceo.name,
+      position: translate.sec6.ceo.position,
+      about: translate.sec6.ceo.about,
       src: 'img/Evgenii.jpg',
       srcset: 'img/Evgenii@2x.jpg 2x'
     },
     {
-      name: 'Михаил Сарычев',
-      position: 'CIO',
-      about: '18 лет в IT. Лидер разработки и активный член Opensource сообщества России.',
+      name: translate.sec6.cio.name,
+      position: translate.sec6.cio.position,
+      about: translate.sec6.cio.about,
       src: 'img/Michail.jpg',
       srcset: 'img/Michail@2x.jpg 2x'
     }
@@ -28,15 +28,13 @@ mixin people
 
 mixin about
   .sec6__about&attributes(attributes)
-    h3.
-      О нас
-    p.
-      Мы — группа профессионалов, специализирующихся на разработке решений для рынка финтек. Нами сделаны десятки платформенных решений на базе Opensource технологий, таких как: Java, Python, Go, Ruby on Rails, ReactJS, GraphQL, PostreSQL, CLoudera, Camunda и пр..
-    p.
-      Мы охотно построим не только правильно спроектированные решения, но и процессы разработки по лучшим практикам CI/CD,DevOps. Вы сможете растить ваш продукт самостоятельно.
+    h3
+      != translate.sec6.title
+    p
+      != translate.sec6.paragraph_1
     .sec6__button-wrap
-      +button().
-          Связаться с нами
+      +button()
+          != translate.sec6.contactUsButton
 
 mixin sec6Slider(_mobile)
   -
@@ -64,14 +62,14 @@ mixin sec6Slider(_mobile)
       .sec6__frame
         +people
         p.text-m.sec6__slider-name.sec6__people-title
-          strong.
-            программистов
+          strong
+            != translate.sec6.programmers
       .sec6__slider-slide-info
         p.text-m.sec6__slider-name
-          strong.
-            программистов
-      +button.sec6__people-button.
-        Связаться с нами
+          strong
+            != translate.sec6.programmers
+      +button.sec6__people-button
+        != translate.sec6.contactUsButton
 
 +section(id=menu[2].href).sec6.color-white
   +container
