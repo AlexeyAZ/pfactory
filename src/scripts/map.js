@@ -36,7 +36,8 @@ function loadMapScript(src, callback) {
 }
 
 function makeMap(elements) {
-  loadMapScript(`https://maps.googleapis.com/maps/api/js?key=${key}`, () => siteMaps(elements));
+  const lang = document.documentElement.getAttribute('lang');
+  loadMapScript(`https://maps.googleapis.com/maps/api/js?key=${key}&language=${lang}`, () => siteMaps(elements));
 }
 
 export default makeMap;
