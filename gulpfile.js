@@ -35,9 +35,7 @@ const webpackStream = require('webpack-stream');
 const webpack = require('webpack');
 const pugI18n = require('gulp-pug-i18n');
 const siteConfig = require('./src/config/siteConfig');
-const gulpData = require('gulp-data');
 
-console.log(siteConfig)
 
 console.log('ip list: ' + devip()); // show all ip list. Need for browsersync host option
 
