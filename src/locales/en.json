@@ -11,8 +11,8 @@
     "requestOrderButton": "Request order"
   },
   "sec1": {
-    "title_1": "Pfactory - is",
-    "title_2": "platform factory",
+    "title_1": "Pfactory - factory",
+    "title_2": "for platforms",
     "subtitle": "Analysis of any developing business can  for sure reveal a platform in its heart. A platform is not just a mere IT-solution, - its ideology for expanding business.",
     "creatingPlatformsButton": "Creating platforms",
     "sellPeopleButton": "Man power procurement"
@@ -77,11 +77,43 @@
   "sec5": {
     "title": "Technologies and rates",
     "hour": "hour",
-    "buyManButton": "Hire a professional"
+    "buyManButton": "Hire a professional",
+    "currency": "$",
+    "price": {
+      "java": {
+        "middle": 30,
+        "senior": 40
+      },
+      "rails": {
+        "middle": 25,
+        "senior": 35
+      },
+      "js": {
+        "middle": 30,
+        "senior": 40
+      },
+      "camunda": {
+        "middle": 30,
+        "senior": 40
+      },
+      "python": {
+        "middle": 20,
+        "senior": 30
+      },
+      "apps": {
+        "middle": 25,
+        "senior": 35
+      },
+      "php": {
+        "middle": 20,
+        "senior": 30
+      }
+    }
   },
   "sec6": {
     "title": "About us",
     "paragraph_1": "We are a professional team, specializing in fintech market solutions. We have accomplished dozens of platform solutions based on Opensource technologies, like Java, Python, Go, Ruby on Rails, ReactJS, GraphQL, PostreSQL, Cloudera, Camunda, etc..",
+    "paragraph_2": "We will readily create smartly elaborated solutions together with development flow patterned after best CI/CD, DevOps practices. You will able to evolve the product using your own resources.",
     "contactUsButton": "Contact us",
     "programmers": "programmers",
     "ceo": {
@@ -176,6 +208,10 @@
     "description": "Analysis of any developing business can  for sure reveal a platform in its heart. A platform is not just a mere IT-solution, - its ideology for expanding business"
   },
   "contacts": {
-    "address": "Novokhorochevsky proyezd, 18. Moscow, 123308"
+    "address": "Novokhorochevsky proyezd, 18. Moscow, 123308",
+    "phone": {
+      "href": "tel:+18584295892",
+      "text": "+1 858 429 5892"
+    }
   }
 }
