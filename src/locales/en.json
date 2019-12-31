@@ -151,6 +151,10 @@
     "pgk": {
       "title": "Mobile reporter Freight One",
       "text": "Set of services and application for carriage condition assessment by customer’s acceptance. The system aggregates carriage location data and seeks replacement for out-of-order carriages in real-time mode. Predicting carriage in-service time based on mobile application data."
+    },
+    "ls": {
+      "title": "LevSciences",
+      "text": "Biotech platform for life Sciences. The place where selected researches can get support from each other. Show the research progress, exchange equipment and chemical reagents, give access to lab areas."
     }
   },
   "sec8": {

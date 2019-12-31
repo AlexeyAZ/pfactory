@@ -1,0 +1,26 @@
+-
+  const logo = 'pf_1200x1200.jpg'
+  const vkLogo = 'pf_1020x456.jpg'
+
+mixin opengraph()
+  meta(name="description", content=config.meta.description)
+  meta(name="image" content=`${config.url}/img/${logo}`)
+  //- meta(name="keywords")
+
+  //- Open Graph general (Facebook, Pinterest & Google+)
+  meta(property="og:title" content=config.title)
+  meta(property="og:description" content=config.meta.description)
+  meta(property="og:image" content=`${config.url}/img/${logo}`)
+  meta(property="og:url" content=config.url)
+  meta(property="og:site_name" content=config.meta.siteName)
+  meta(property="og:locale" content=config.meta.locale)
+  meta(property="og:type" content="article")
+  //- Schema.org for Twitter
+  meta(name="twitter:title" content=config.title)
+  meta(name="twitter:description" content=config.meta.description)
+  //- Schema.org for Google
+  meta(itemProp="name" content=config.title)
+  meta(itemProp="description" content=config.meta.description)
+  meta(itemProp="image" content=`${config.url}/img/${logo}`)
+  //- Schema.org for Vk
+  meta(property="vk:image" content=`${config.url}/img/${vkLogo}`)

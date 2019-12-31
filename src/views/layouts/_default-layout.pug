@@ -1,6 +1,7 @@
 doctype html
 
 include ../common/variables.pug
+include ../common/opengraph.pug
 
 block init
 block vars
@@ -8,9 +9,9 @@ block vars
 html(lang=translate.lang)
   head
     meta(charset="utf-8")
-    meta(name="description", content=translate.meta.description)
+    +opengraph
     meta(name="viewport", content="width=device-width, initial-scale=1.0, minimal-ui")
-    title #{title}
+    title #{config.title}
     include ../common/favicons.pug
     link(href="styles/main.css?v=" + Date.now(), rel="stylesheet")
     //- ATS -//

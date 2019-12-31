@@ -81,6 +81,7 @@
   }
 
   &__contacts-container {
+    font-weight: bold;
     @include media(w768) {
       width: 50%;
     }

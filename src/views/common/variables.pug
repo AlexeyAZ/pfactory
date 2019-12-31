@@ -1,5 +1,14 @@
 -
   const title = translate.meta.title;
+  const config = {
+    url: translate.lang === 'ru' ? 'https://pfactory.ru' : 'https://pfactory.org',
+    title: translate.meta.title,
+    meta: {
+      siteName: 'Pfactory',
+      locale: translate.lang === 'ru' ? 'ru_RU' : 'en_EN',
+      description: translate.meta.description,
+    }
+  }
   const menu = [
     {
       href: 'directions',
