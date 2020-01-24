@@ -82,28 +82,28 @@
     "currency": "₽",
     "price": {
       "java": {
-        "middle": 1900,
-        "senior": 2200
+        "middle": 2100,
+        "senior": 2500
       },
       "rails": {
         "middle": 1800,
         "senior": 2100
       },
       "js": {
-        "middle": 1700,
-        "senior": 2000
+        "middle": 2100,
+        "senior": 2500
       },
       "camunda": {
-        "middle": 1800,
-        "senior": 2100
+        "middle": 2100,
+        "senior": 2500
       },
       "python": {
-        "middle": 1600,
-        "senior": 1800
+        "middle": 1800,
+        "senior": 2200
       },
       "apps": {
-        "middle": 1500,
-        "senior": 1800
+        "middle": 1900,
+        "senior": 2300
       },
       "php": {
         "middle": 1500,
