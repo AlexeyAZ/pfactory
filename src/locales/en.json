@@ -117,14 +117,18 @@
     "contactUsButton": "Contact us",
     "programmers": "programmers",
     "ceo": {
-      "name": "Yevgeny Agafonov",
-      "position": "CEO",
-      "about": "10 years of IT-companies management experience. Dozens of implemented projects and teams created."
+      "name": "Brent Nally",
+      "position": "Chief Executive Officer",
+      "about": "15 Years in business, project management and sales. The Longevity expert and team leader in tech solutions.",
+      "imgSrc": "img/brent_nally.jpg",
+      "imgSrc2x": "img/brent_nally@2x.jpg 2x"
     },
     "cio": {
-      "name": "Mikhail Sarytchev",
-      "position": "CIO",
-      "about": "18 years experience in IT. Development leader and active member of Opensource Russia."
+      "name": "Keith Comito Chief",
+      "position": "Chief Information Officer",
+      "about": "20 Years in IT solutions. Dozens of created projects and teams created.",
+      "imgSrc": "img/keith_commito.jpg",
+      "imgSrc2x": "img/keith_commito@2x.jpg 2x"
     }
   },
   "sec7": {
