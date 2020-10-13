@@ -106,17 +106,27 @@ const app = {
 
     const sec5Slider = new Slider();
     sec5Slider.createSlider('.sec5__slider', {
+      slidesPerView: 2,
+      spaceBetween: 40,
       breakpoints: {
+        500: {
+          spaceBetween: 0
+        },
         1024: {
-          slidesPerView: 3,
-          slidesPerGroup: 3
+          slidesPerView: 3
         },
         1366: {
-          slidesPerView: 4,
-          slidesPerGroup: 4
+          slidesPerView: 4
         }
       },
-      autoHeight: true
+      autoHeight: true,
+      speed: 5000,
+      freeMode: true,
+      loop: true,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false
+      }
     });
     if (!md.mobile() && !window.matchMedia('(max-width: 1024px)').matches) {
       const sec5SliderAnimation = () => {

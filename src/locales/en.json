@@ -76,7 +76,7 @@
     }
   },
   "sec5": {
-    "title": "Technologies and rates",
+    "title": "Our technologies",
     "hour": "hour",
     "buyManButton": "Hire a professional",
     "currency": "$",
@@ -217,10 +217,10 @@
     "description": "Analysis of any developing business can  for sure reveal a platform in its heart. A platform is not just a mere IT-solution, - its ideology for expanding business"
   },
   "contacts": {
-    "address": "Novokhorochevsky proyezd, 18. Moscow, 123308",
+    "address": "Derby House Office 2, 123 Watling Street, Gillingham, Kent, ME7 2YY",
     "phone": {
-      "href": "tel:+18584295892",
-      "text": "+1 858 429 5892"
+      "href": "tel:+447414665520",
+      "text": "+44 7414 665520"
     }
   }
 }

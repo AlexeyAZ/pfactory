@@ -35,7 +35,7 @@ mixin sec9Contact(item)
     const cls = item.class ? `sec9__icon_${item.class}` : '';
   if item.href
     p.sec9__contacts-container&attributes(attributes)
-      a(href=item.href).sec9__contacts-item
+      a(href=item.href target="_blank").sec9__contacts-item
         span.sec9__contacts-icon
           +icon(item.icon)(class=cls).sec9__icon
         span.sec9__contacts-text

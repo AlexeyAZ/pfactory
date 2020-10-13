@@ -19,8 +19,8 @@ mixin header()
             .header__menu-item
               a(href=`#${item.href}`).header__menu-link
                 != item.text
-        +selectLanguage(langOptions).header__select-language.header__select-language_mobile
-      +selectLanguage(langOptions).header__select-language.header__select-language_desktop
+        //- +selectLanguage(langOptions).header__select-language.header__select-language_mobile
+      //- +selectLanguage(langOptions).header__select-language.header__select-language_desktop
       .header__actions
         +button().header__button
           !=translate.header.requestOrderButton

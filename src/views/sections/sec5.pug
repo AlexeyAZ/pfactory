@@ -8,7 +8,7 @@
     },
     {
       title: 'Ruby on rails',
-      icon: 'rails.png',
+      icon: 'c_language.png',
       middle: translate.sec5.price.rails.middle,
       senior: translate.sec5.price.rails.senior,
     },
@@ -32,7 +32,7 @@
     },
     {
       title: 'Mobile apps, Native, Android, IOS',
-      icon: 'apps.png',
+      icon: 'react.png',
       middle: translate.sec5.price.apps.middle,
       senior: translate.sec5.price.apps.senior,
     },
@@ -62,32 +62,7 @@
           .sec5__slider-slide-inner
             .sec5__slider-image-wrap
               img(src=`./img/${item.icon}`, alt="").sec5__slider-image
-            .sec5__slide-info
-              p.sec5__slide-title
-                strong
-                  != item.title
-              .sec5__slide-item
-                p.sec5__slide-experience.
-                  Middle
-                p.mb-0
-                  strong.text-m
-                    != item.middle
-                  |
-                  |
-                  strong.
-                    #{translate.sec5.currency} / #{translate.sec5.hour}
-              .sec5__slide-item
-                p.sec5__slide-experience.
-                  Senior
-                p.mb-0
-                  strong.text-m
-                    != item.senior
-                  |
-                  |
-                  strong.
-                    #{translate.sec5.currency} / #{translate.sec5.hour}
-              +sec5Button().sec5__slide-button
             .sec5__slider-description
               p.
-          .sec5__slide-button-tablet
-            +sec5Button()
+          //- .sec5__slide-button-tablet
+          //-   +sec5Button()
