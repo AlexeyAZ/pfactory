@@ -113,7 +113,7 @@
     }
   },
   "sec6": {
-    "title": "About us",
+    "title": "Why do you need us?",
     "paragraph_1": "We are a professional team, specializing in fintech market solutions. We have accomplished dozens of platform solutions based on Opensource technologies, like Java, Python, Go, Ruby on Rails, ReactJS, GraphQL, PostreSQL, Cloudera, Camunda, etc..",
     "paragraph_2": "We will readily create smartly elaborated solutions together with development flow patterned after best CI/CD, DevOps practices. You will able to evolve the product using your own resources.",
     "contactUsButton": "Contact us",
