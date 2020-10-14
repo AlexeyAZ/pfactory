@@ -27,7 +27,7 @@ block content
           +input(placeholder=translate.formFields.email required name="email" type="email")
           +input(placeholder=translate.formFields.message required name="phone" type="tel")
         .index__form-fields-item
-          +input('textarea')(placeholder=translate.formFields.name rows="8" name="comment").index__form-textarea
+          +input('textarea')(placeholder=translate.formFields.message rows="8" name="comment").index__form-textarea
       .index__form-button-wrap
         +button({tag: 'button', invert: true})(type="submit").index__form-button
           != translate.popup.sendRequestButton

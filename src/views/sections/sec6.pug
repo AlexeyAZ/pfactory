@@ -45,33 +45,33 @@ mixin sec6Slider(_mobile)
     if !_mobile
       +sec6Slide('sec6__slider-slide_main')
         +about.sec6__about_desktop
-    each item in aboutData
-      -
-        const { name, position, about, src, srcset } = item
-      +sec6Slide.sec6__slider-slide-photo
-        .sec6__frame
-          img(src=src srcset=srcset).sec6__photo
-        .sec6__slider-slide-info
-          p.text-m.sec6__slider-name
-            strong
-              !=name
-          p
-            em
-              !=position
-          p
-            !=about
-    +sec6Slide.sec6__people-wrap
-      .sec6__frame
-        +people
-        p.text-m.sec6__slider-name.sec6__people-title
-          strong
-            != translate.sec6.programmers
-      .sec6__slider-slide-info
-        p.text-m.sec6__slider-name
-          strong
-            != translate.sec6.programmers
-      +button.sec6__people-button
-        != translate.sec6.contactUsButton
+    //- each item in aboutData
+    //-   -
+    //-     const { name, position, about, src, srcset } = item
+    //-   +sec6Slide.sec6__slider-slide-photo
+    //-     .sec6__frame
+    //-       img(src=src srcset=srcset).sec6__photo
+    //-     .sec6__slider-slide-info
+    //-       p.text-m.sec6__slider-name
+    //-         strong
+    //-           !=name
+    //-       p
+    //-         em
+    //-           !=position
+    //-       p
+    //-         !=about
+    //- +sec6Slide.sec6__people-wrap
+    //-   .sec6__frame
+    //-     +people
+    //-     p.text-m.sec6__slider-name.sec6__people-title
+    //-       strong
+    //-         != translate.sec6.programmers
+    //-   .sec6__slider-slide-info
+    //-     p.text-m.sec6__slider-name
+    //-       strong
+    //-         != translate.sec6.programmers
+      //- +button.sec6__people-button
+      //-   != translate.sec6.contactUsButton
 
 +section(id=menu[2].href).sec6.color-white
   +container

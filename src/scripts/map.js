@@ -19,7 +19,7 @@ function siteMaps(elements) {
     elements.forEach(el => {
       const map = document.querySelector(el);
       if (map) {
-        initMap(map, {lat: 55.778378, lng: 37.494670}, 'Новохорошевский пр-д, 18, Москва, 123308');
+        initMap(map, {lat: 51.372398, lng: 0.559163}, 'Derby House Office 2, 123 Watling Street, Gillingham, Kent, ME7 2YY');
       }
     });
   }

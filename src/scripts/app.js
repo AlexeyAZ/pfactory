@@ -117,6 +117,9 @@ const app = {
         },
         1366: {
           slidesPerView: 4
+        },
+        1600: {
+          slidesPerView: 5
         }
       },
       autoHeight: true,

@@ -3,6 +3,7 @@
   "header": {
     "menu": {
       "directions": "Business directions",
+      "outsourcing": "Outsourcing",
       "prices": "Prices",
       "about": "Who we are",
       "projects": "Projects",
@@ -203,7 +204,7 @@
     "name": "Name",
     "email": "Email",
     "phone": "Phone",
-    "message": "Message ",
+    "message": "New message",
     "mandatoryFields": "Mandatory fields",
     "successMessage": "Спасибо, ваше сообщение отправлено!"
   },
