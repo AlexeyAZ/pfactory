@@ -33,7 +33,7 @@ export default class Form {
   makePhoneMask() {
     const phoneFields = this.form.querySelectorAll('.input__field[name="phone"]');
     phoneFields.forEach(field => {
-      const mask = imask(field, {mask: '+{00} 0000 000000'});
+      const mask = imask(field, {mask: '+{0}0 0000 000000'});
       field.addEventListener('blur', () => {
         mask.updateOptions({lazy: true});
         if (mask.unmaskedValue.length !== 11) {
@@ -142,7 +142,7 @@ export default class Form {
     const fields = this.form.querySelectorAll('.input__field[required]');
     this.button = this.form.querySelector('.button');
 
-    this.makePhoneMask();
+    // this.makePhoneMask();
 
     this.button.addEventListener('click', e => {
       e.preventDefault();

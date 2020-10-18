@@ -7,12 +7,11 @@
 
   background-color: $black;
   padding-top: 60px;
-  padding-bottom: 20px;
+  padding-bottom: 50px;
   overflow: hidden;
 
   @include media(w768) {
     padding-top: 75px;
-    padding-bottom: 35px;
   }
 
   @include media(w1024) {
