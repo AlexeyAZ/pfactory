@@ -33,7 +33,7 @@ export default class Form {
   makePhoneMask() {
     const phoneFields = this.form.querySelectorAll('.input__field[name="phone"]');
     phoneFields.forEach(field => {
-      const mask = imask(field, {mask: '+{0} (000) 000-00-00'});
+      const mask = imask(field, {mask: '+{00} 0000 000000'});
       field.addEventListener('blur', () => {
         mask.updateOptions({lazy: true});
         if (mask.unmaskedValue.length !== 11) {
