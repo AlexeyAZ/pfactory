@@ -16,6 +16,8 @@ const ymSettings = {
   goalId: 'form'
 };
 
+const api = 'https://pfactory.org';
+
 const app = {
   load: () => {
     app.bindEvents();
@@ -192,7 +194,7 @@ const app = {
       ym(ymSettings.counterNumber, 'reachGoal', ymSettings.goalId);
       axios({
         method: 'post',
-        url: 'https://pfactory.ru/send_mail',
+        url: `${api}/send_mail`,
         data: sec9Form.getFormData()
       })
         .then(() => {
@@ -207,7 +209,7 @@ const app = {
       ym(ymSettings.counterNumber, 'reachGoal', ymSettings.goalId);
       axios({
         method: 'post',
-        url: 'https://pfactory.ru/send_mail',
+        url: `${api}/send_mail`,
         data: popupForm.getFormData()
       })
         .then(() => {
