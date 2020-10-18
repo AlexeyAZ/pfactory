@@ -8,6 +8,7 @@
   background-color: $black;
   padding-top: 60px;
   padding-bottom: 20px;
+  overflow: hidden;
 
   @include media(w768) {
     padding-top: 75px;
@@ -18,20 +19,68 @@
     padding-bottom: 55px;
   }
 
-  &__about {
-    &_tablet {
+  &__slider-about {
+    @include media(w1024) {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    &_mobile {
       @include media(w1024) {
         display: none;
       }
     }
-
     &_desktop {
       display: none;
-
       @include media(w1024) {
-        margin-top: -$boxSizeMobile;
         display: block;
       }
+    }
+  }
+
+  &__directions {
+    display: flex;
+    flex-direction: column;
+    &_mobile {
+      @include media(w1024) {
+        display: none;
+      }
+    }
+  }
+
+  &__directions-row {
+    @include media(w768) {
+      display: flex;
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__direction {
+    transition: $trans;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    height: 102px;
+    @include media(w1024) {
+      margin-bottom: 0;
+      height: 202px;
+      width: 525px;
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
+    }
+    &:hover {
+      border-color: $blue;
+      cursor: pointer;
     }
   }
   
@@ -47,13 +96,6 @@
   }
 
   &__slider {
-    padding-bottom: 30px;
-    display: none;
-
-    @include media(w1024) {
-      display: block;
-    }
-
     &_mobile {
       display: block;
       @include media(w1024) {
@@ -61,8 +103,9 @@
       }
     }
 
-    @include media(w768) {
-      padding-bottom: 50px;
+    &_desktop {
+      overflow: visible;
+      padding-bottom: 40px;
     }
   }
 
@@ -70,9 +113,12 @@
     @include media(w1024) {
       padding-left: 40px;
       padding-right: 40px;
-      width: 25%;
+      width: auto;
     }
     &_main {
+      .sec6__slider-slide-inner {
+        height: 100%;
+      }
       @include media(w1024) {
         width: 50%;
       }
@@ -80,11 +126,9 @@
   }
 
   &__slider-slide-inner {
-    padding-top: $boxSizeMobile;
     text-align: center;
 
     @include media(w768) {
-      padding-top: $boxSizeTablet;
       text-align: left;
     }
   }

@@ -32,7 +32,7 @@ const app = {
     const formPopup = new Popup('.js-form-popup');
     formPopup.init();
 
-    const buttons = document.querySelectorAll('a.button');
+    const buttons = document.querySelectorAll('a.button, .js-open-popup');
     [...buttons].forEach(button => button.addEventListener('click', e => {
       e.preventDefault();
       formPopup.open();
@@ -151,10 +151,10 @@ const app = {
 
     const sec6SliderMobile = new Slider();
     sec6SliderMobile.createSlider('.sec6__slider_mobile', {
-      spaceBetween: 20,
+      slidesPerView: 'auto',
       breakpoints: {
-        1024: {
-          slidesPerView: 'auto'
+        600: {
+          slidesPerView: 2
         }
       }
     });
@@ -162,6 +162,8 @@ const app = {
     const sec6SliderDesktop = new Slider();
     sec6SliderDesktop.createSlider('.sec6__slider_desktop', {
       spaceBetween: 20,
+      freeMode: true,
+      slidesPerView: 'auto',
       mousewheel: {
         releaseOnEdges: true
       },

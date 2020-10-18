@@ -5,7 +5,7 @@
       "directions": "Business directions",
       "outsourcing": "Outsourcing",
       "prices": "Prices",
-      "about": "Who we are",
+      "about": "Why us",
       "projects": "Projects",
       "contacts": "Contacts"
     },
@@ -131,6 +131,14 @@
       "about": "20 Years in IT solutions. Dozens of created projects and teams created.",
       "imgSrc": "img/keith_commito.jpg",
       "imgSrc2x": "img/keith_commito@2x.jpg 2x"
+    },
+    "directions": {
+      "platformDevelopment": "Platform development",
+      "devOps": "DevOps",
+      "frontend": "Frontend development and mobile",
+      "workflow": "Workflow analysis and BPM systems implementation",
+      "design": "UX and Service Design",
+      "backend": "Backend servers programming and databases"
     }
   },
   "sec7": {
@@ -204,9 +212,9 @@
     "name": "Name",
     "email": "Email",
     "phone": "Phone",
-    "message": "New message",
+    "message": "Your message",
     "mandatoryFields": "Mandatory fields",
-    "successMessage": "Спасибо, ваше сообщение отправлено!"
+    "successMessage": "Message sent!"
   },
   "popup": {
     "title": "Development request",

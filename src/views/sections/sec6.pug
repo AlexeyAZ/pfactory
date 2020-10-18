@@ -1,20 +1,25 @@
 -
-  const aboutData = [
-    {
-      name: translate.sec6.ceo.name,
-      position: translate.sec6.ceo.position,
-      about: translate.sec6.ceo.about,
-      src: translate.sec6.ceo.imgSrc,
-      srcset: translate.sec6.ceo.imgSrc2x
-    },
-    {
-      name: translate.sec6.cio.name,
-      position: translate.sec6.cio.position,
-      about: translate.sec6.cio.about,
-      src: translate.sec6.cio.imgSrc,
-      srcset: translate.sec6.cio.imgSrc2x
-    }
+  const directions = [
+    translate.sec6.directions.platformDevelopment,
+    translate.sec6.directions.devOps,
+    translate.sec6.directions.design,
+    translate.sec6.directions.frontend,
+    translate.sec6.directions.workflow,
+    translate.sec6.directions.backend
   ]
+  const rows = 0
+  let desktopDirections = []
+  let tempRow = []
+  directions.forEach((item, index) => {
+    if (tempRow.length < 3) {
+      tempRow.push(item)
+    }
+    if (tempRow.length === 3) {
+      const row = JSON.parse(JSON.stringify(tempRow))
+      desktopDirections.push(row)
+      tempRow = []
+    }
+  })
 
 mixin sec6Slide(cls)
   +sliderSlide('sec6')(class=cls)
@@ -25,6 +30,18 @@ mixin people
   .sec6__people
     img(src="img/icon_people.svg").sec6__people-icon.sec6__people-icon_team
     img(src="img/icon_100.svg").sec6__people-icon.sec6__people-icon_amount
+
+mixin directionItem
+  .sec6__direction.js-open-popup
+    block
+
+mixin directions(cls)
+  .sec6__directions(class=cls)
+    each directionRow in desktopDirections
+      .sec6__directions-row
+        each directionName in directionRow
+          +directionItem
+            !=directionName
 
 mixin about
   .sec6__about&attributes(attributes)
@@ -38,44 +55,26 @@ mixin about
       +button()
           != translate.sec6.contactUsButton
 
-mixin sec6Slider(_mobile)
-  -
-    const sliderCls = _mobile ? 'sec6__slider_mobile' : 'sec6__slider_desktop'
-  +slider('sec6', {pagination: {invert: true}, scrollbar: {invert: true}})(class=sliderCls)
-    if !_mobile
-      +sec6Slide('sec6__slider-slide_main')
-        +about.sec6__about_desktop
-    //- each item in aboutData
-    //-   -
-    //-     const { name, position, about, src, srcset } = item
-    //-   +sec6Slide.sec6__slider-slide-photo
-    //-     .sec6__frame
-    //-       img(src=src srcset=srcset).sec6__photo
-    //-     .sec6__slider-slide-info
-    //-       p.text-m.sec6__slider-name
-    //-         strong
-    //-           !=name
-    //-       p
-    //-         em
-    //-           !=position
-    //-       p
-    //-         !=about
-    //- +sec6Slide.sec6__people-wrap
-    //-   .sec6__frame
-    //-     +people
-    //-     p.text-m.sec6__slider-name.sec6__people-title
-    //-       strong
-    //-         != translate.sec6.programmers
-    //-   .sec6__slider-slide-info
-    //-     p.text-m.sec6__slider-name
-    //-       strong
-    //-         != translate.sec6.programmers
-      //- +button.sec6__people-button
-      //-   != translate.sec6.contactUsButton
+mixin sec6Slider
+  +slider('sec6', {pagination: {invert: true}, scrollbar: {invert: true}})(class="sec6__slider_desktop")
+    +sec6Slide('sec6__slider-slide_main')
+      .sec6__slider-about
+        +about
+    +sec6Slide
+      +directions('sec6__directions_desktop')
+
+mixin sec6SliderMobile
+  +slider('sec6', {pagination: {invert: true}, scrollbar: {invert: true}})(class="sec6__slider_mobile")
+    each directionName in directions
+      +sec6Slide
+        +directionItem
+          !=directionName
 
 +section(id=menu[2].href).sec6.color-white
   +container
-    +about.sec6__about_tablet
-    +sec6Slider(true)
-    +sec6Slider
+    .sec6__content_desktop
+      +sec6Slider
+    .sec6__content_mobile
+      +about
+      +sec6SliderMobile
   img(src="./img/our_skills.svg").sec6__skills

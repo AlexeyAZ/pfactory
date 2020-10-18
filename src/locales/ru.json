@@ -131,6 +131,14 @@
       "about": "18 лет в IT. Лидер разработки и активный член Opensource сообщества России.",
       "imgSrc": "img/Michail.jpg",
       "imgSrc2x": "img/Michail@2x.jpg 2x"
+    },
+    "directions": {
+      "platformDevelopment": "Platform development",
+      "devOps": "devOps",
+      "frontend": "Frontend development and mobile",
+      "workflow": "Workflow analysis and BPM systems implementation",
+      "design": "UX and Service Design",
+      "backend": "Backend servers programming and databases"
     }
   },
   "sec7": {
